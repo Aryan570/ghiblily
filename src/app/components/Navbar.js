@@ -35,13 +35,6 @@ const Navbar = () => {
                 </div>
             </section>
         </div>
-        // hover:scale-x-110 hover:scale-y-105
     )
 }
 export default Navbar
-//I like to code things from scratch, and enjoy bringing ideas to life in the browser.
-//changes
-//height in line 20
-//w-auto in line 20
-//w-70 in line 20
-//line 9 flex row flex col
