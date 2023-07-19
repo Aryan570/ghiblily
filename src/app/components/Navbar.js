@@ -1,8 +1,19 @@
+'use client'
 import Image from 'next/image'
 import Link from 'next/link'
 import Example from './Example'
 import profilepic from 'public/Movie.webp'
 const Navbar = () => {
+    const handleScroll = (e) => {
+        e.preventDefault();
+        const href = e.currentTarget.href;
+        const targetId = href.replace(/.*\#/, "");
+        const elem = document.getElementById(targetId);
+        elem?.scrollIntoView({
+          behavior: "smooth",
+        });
+      };
+    
     return (
         <div className='relative min-h-screen'>
             <Image className='object-cover absolute' src={profilepic} fill alt='Front picture' quality={100} />
@@ -11,8 +22,8 @@ const Navbar = () => {
                 <div>
                     <ul className='flex justify-center  font-Pompiere'>
                         <li className='mx-6 text-white text-2xl font-Pompiere transform hover:scale-x-110 hover:scale-y-105 transition duration-300 ease-out'><Link href="/">Home</Link></li>
-                        <li className='mx-6 text-white text-2xl font-Pompiere transform hover:scale-x-110 hover:scale-y-105 transition duration-300 ease-out '><Link  href="#Skills" >Expertise</Link></li>
-                        <li className='mx-6 text-white text-2xl font-Pompiere transform hover:scale-x-110 hover:scale-y-105 transition duration-300 ease-out'><Link  href="#About">About Site</Link></li>
+                        <li className='mx-6 text-white text-2xl font-Pompiere transform hover:scale-x-110 hover:scale-y-105 transition duration-300 ease-out '><Link  href="#Skills" onClick={handleScroll} >Expertise</Link></li>
+                        <li className='mx-6 text-white text-2xl font-Pompiere transform hover:scale-x-110 hover:scale-y-105 transition duration-300 ease-out'><Link  href="#AboutSite" onClick={handleScroll}>About Site</Link></li>
                     </ul>
                 </div>
             </div>

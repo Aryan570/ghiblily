@@ -36,7 +36,7 @@ const ContactSection = () => {
   }
   const handleSubmit = async (e) => {
     e.preventDefault();
-    toast('🦄 Thanks for sending message! Have a nice day!', {
+    toast.success('🦄 Thanks for sending message! Have a nice day!', {
       position: "top-center",
       autoClose: 3000,
       hideProgressBar: false,
