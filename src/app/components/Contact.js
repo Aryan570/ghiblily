@@ -81,8 +81,9 @@ const ContactSection = () => {
             <Image
               src="/rises2trimmed.webp"
               alt="Contact Image"
-              width={300} height={300}
+              width={400} height={400}
               className="w-full rounded-lg shadow-lg"
+              quality={99}
             />
           </div>
           <div className="max-w-md mx-auto">
