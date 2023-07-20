@@ -79,7 +79,7 @@ const ContactSection = () => {
         <div className="flex flex-col md:flex-row justify-center items-center">
           <div className="max-w-md mx-auto md:mr-8 mb-8 md:mb-0">
             <Image
-              src="/../public/rises2trimmed.webp"
+              src="/rises2trimmed.webp"
               alt="Contact Image"
               width={200} height={200}
               className="w-full rounded-lg shadow-lg"
