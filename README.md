@@ -1,3 +1,4 @@
+![Github_pic](https://github.com/Aryan570/ghiblily/assets/91080682/2e27e342-62b9-42b2-916b-a963c551fda1)
 
 This is my Portfolio Website inspired by Studio Ghibli.   https://ghiblily.vercel.app/
 Build from Nextjs, TailwindCSS, and Howler.js (react_use_audio_player).
@@ -9,9 +10,8 @@ Challenges and Learnings :
 - Had to learn about nodemailer for sending messages straight to my Gmail, instead of showing a popup for mail.
 _ Learnt about React Parallax.
 - Image Optimisation.
-![Github_pic](https://github.com/Aryan570/ghiblily/assets/91080682/2e27e342-62b9-42b2-916b-a963c551fda1)
-
+- 
 Current Issues:
-- Very slow to load as there are so many assets to download. Improve LCP
+- Very slow to load as there are so many assets to download. Improve LCP. Improve Performace.
 - Need to make a skeleton as the app is loading.
 - Improve mobile view
