@@ -31,7 +31,7 @@ const Navbar = () => {
                 <div className='md:w-96 w-72 md:h-auto h-28 pt-14'><p className='break-words'>Hey there, and welcome to my realm! I&apos;m delighted to have you here. I&apos;m a Web Developer and well-versed in <span className='text-green-300'><Example /></span> </p>
                 </div>
                 <div className='flex justify-center items-center my-24 transform  transition duration-300 ease-out'>
-                <Link target='_blank' href="https://drive.google.com/file/d/10CMzDqqYmyD5hgkstkjz64nqfcdIMHQE/view?usp=sharing"><button type='button' className='text-gray-900 shadow-lg shadow-lime-400 bg-gradient-to-r from-teal-200 to-lime-200 hover:bg-gradient-to-l hover:from-teal-200 hover:to-lime-200 focus:ring-4 focus:outline-none focus:ring-lime-200   rounded-2xl text-lg px-2 text-center'><p className='p-4'>Download Resume</p></button></Link>
+                <Link target='_blank' href="https://drive.google.com/file/d/1VH0gMXPAnaHVoKnWqttxyRwqUO8ozSzj/view?usp=sharing"><button type='button' className='text-gray-900 shadow-lg shadow-lime-400 bg-gradient-to-r from-teal-200 to-lime-200 hover:bg-gradient-to-l hover:from-teal-200 hover:to-lime-200 focus:ring-4 focus:outline-none focus:ring-lime-200   rounded-2xl text-lg px-2 text-center'><p className='p-4'>Download Resume</p></button></Link>
                 </div>
             </section>
         </div>
