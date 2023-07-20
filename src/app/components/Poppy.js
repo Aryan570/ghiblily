@@ -72,7 +72,7 @@ const MyComponent = () => {
         </button>
       </div>
       <div className={`fixed flex items-center justify-around inset-0  transition-opacity ${showSplash ? 'opacity-100 ' : 'opacity-0 pointer-events-none'}`}>
-        <Image className='object-cover contrast-75' src="/yesterday2.webp" alt='Mainpage' fill quality={100} sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw" priority />
+        <Image className='object-cover contrast-75' src="/yesterday2.webp" alt='Mainpage' fill={true} quality={100} sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw" priority />
         <div className={` rounded-full z-10 p-8 ${showSplash ? 'animate-fade-in' : 'animate-fade-out'}`}>
           <h1 className="text-6xl font-bold mb-4 font-Pompiere text-white">Welcome to Ghiblily!</h1>
           <button className="bg-transparent border-2 text-white font-bold py-2 px-4 rounded-full font-Pompiere text-xl" onClick={handleEnter}>
