@@ -16,7 +16,7 @@ const Navbar = () => {
     
     return (
         <div className='relative min-h-screen'>
-            <Image className='object-cover absolute' src="/Movie.webp" fill alt='Front picture' quality={100} />
+            <Image className='object-cover absolute' src="/Movie.webp" fill alt='Front picture' quality={99} />
             <div className='flex relative  md:justify-around md:flex-row flex-col items-center h-20'>
                 <Link href={'/'}><Image className='saturate-200' src="/totoro_white.png" width={60} height={60} alt='totoro' sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw" /></Link>
                 <div>
