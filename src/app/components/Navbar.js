@@ -2,7 +2,7 @@
 import Image from 'next/image'
 import Link from 'next/link'
 import Example from './Example'
-import profilepic from 'public/Movie.webp'
+// import profilepic from 'public/Movie.webp'
 const Navbar = () => {
     const handleScroll = (e) => {
         e.preventDefault();
@@ -16,9 +16,9 @@ const Navbar = () => {
     
     return (
         <div className='relative min-h-screen'>
-            <Image className='object-cover absolute' src={profilepic} fill alt='Front picture' quality={100} />
+            <Image className='object-cover absolute' src="/Movie.webp" fill alt='Front picture' quality={100} />
             <div className='flex relative  md:justify-around md:flex-row flex-col items-center h-20'>
-                <Link href={'/'}><Image className='saturate-200' src="/../public/totoro_white.png" width={60} height={60} alt='totoro' sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw" /></Link>
+                <Link href={'/'}><Image className='saturate-200' src="/totoro_white.png" width={60} height={60} alt='totoro' sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw" /></Link>
                 <div>
                     <ul className='flex justify-center  font-Pompiere'>
                         <li className='mx-6 text-white text-2xl font-Pompiere transform hover:scale-x-110 hover:scale-y-105 transition duration-300 ease-out'><Link href="/">Home</Link></li>

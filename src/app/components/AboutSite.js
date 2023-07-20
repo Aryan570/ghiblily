@@ -21,7 +21,7 @@ const AboutSection = () => {
           </div>
           <div>
             <Image
-              src="/../public/rises.gif"
+              src="/rises.gif"
               alt="Website_Image"
               width={100} height={100}
               className="w-full rounded-lg shadow-lg"
