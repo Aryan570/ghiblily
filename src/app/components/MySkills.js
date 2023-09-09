@@ -8,7 +8,7 @@ const MySkills = () => {
         <div className=' grid lg:h-[400px] lg:grid-cols-3 grid-rows-[200px_minmax(200px,_1fr)_200px] gap-1 -ml-1.5 font-Pompiere lg:text-2xl sm:text-2xl text-xl overflow-hidden '>
           {/* The first grid element */} <div className=" rounded-2xl overflow-hidden relative border-2 w-full lg:h-80"><Image className='w-full absolute object-cover contrast-[0.7]' src="/kiki1.webp" alt='bg-check1' fill={true} sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw" />
             <div className="leftside flex justify-center text-center p-4 absolute">
-              <div className='flex justify-center absolute items-center text-white '><Image className='mr-2 saturate-0' src="/cpp.png" alt='C++' width={50} height={50} sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw" />Software Development </div>
+              <div className='flex justify-center absolute items-center text-white '><Image className='mr-2 saturate-0' src="/Cpp.png" alt='C++' width={50} height={50} sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw" />Software Development </div>
               <p className='mt-16 text-white'>I&apos;m proficient in C++ and very much experienced with Data Structuces &amp; Algorithms. I Have done 900+ Questions on LeetCode.</p></div></div>
           {/* The second grid element */} <div className=" rounded-2xl overflow-hidden relative border-2 w-full lg:h-80"><Image className='w-full absolute object-cover contrast-[0.7]' src="/seiji.webp" alt='bg-check1' fill={true} sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw" />
             <div className="leftside flex justify-center text-center p-4 absolute">
