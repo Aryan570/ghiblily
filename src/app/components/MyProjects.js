@@ -52,7 +52,7 @@ const ProjectDisplay = () => {
       id: 5,
       title: 'Project 2',
       description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla ultricies, lorem et efficitur placerat, ipsum lacus malesuada mauris.',
-      image: '/whisper1.gif',
+      image: '/wait_real.jpg',
       size: 'small',
     },
     {
