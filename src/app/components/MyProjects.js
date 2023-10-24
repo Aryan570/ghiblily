@@ -8,6 +8,13 @@ const ProjectDisplay = () => {
     <pre className='font-Pompiere'>TailwindCSS</pre>
     <pre className='font-Pompiere'>MongoDB</pre></div>;
 
+  const waitwhat = <div>The tech stack at the Arigato Project consist primarily of :
+    <pre className='font-Pompiere'>TypeScript</pre>
+    <pre className='font-Pompiere'>NextJS</pre>
+    <pre className='font-Pompiere'>MongoDB</pre>
+    <pre className='font-Pompiere'>UploadThing</pre>
+    </div>;
+
   const newsapp = <div>The tech stack at the NewsApp Project consist primarily of :
     <pre className='font-Pompiere'>React</pre>
     <pre className='font-Pompiere'>NewsAPI</pre>
@@ -50,8 +57,8 @@ const ProjectDisplay = () => {
     },
     {
       id: 5,
-      title: 'Project 2',
-      description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla ultricies, lorem et efficitur placerat, ipsum lacus malesuada mauris.',
+      title: 'Wait..What',
+      description: 'This is the notes making website. fully personalized. you can choose your own banner pictures. This was also my first typescript project. I personally use it for my notes. I just wanted to do something with UploadThing and shadcn-ui, so I did this project.',
       image: '/wait_real.jpg',
       size: 'small',
     },
@@ -92,7 +99,7 @@ const ProjectDisplay = () => {
                 className="h-auto w-full object-cover rounded-lg shadow-lg cursor-auto"
                 sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
               />
-              {selectedProject === project.id && project.id!=3 && project.id!=5 && project.id!=6 && (
+              {selectedProject === project.id && project.id!=3 && project.id!=6 (
                 <div className="absolute inset-0 flex items-center justify-center bg-gray-900 bg-opacity-75 rounded-lg">
                   <div className="p-6 bg-white rounded-lg z-40 font-Pompiere">
                     <h3 className="text-xl font-semibold mb-4 text-emerald-400 underline">{project.title}</h3>
@@ -100,6 +107,7 @@ const ProjectDisplay = () => {
                     {project.id === 1 && <div>{arigato}</div>}
                     {project.id === 2 && <div>{newsapp}</div>}
                     {project.id === 4 && <div>{HandGestures}</div>}
+                    {project.id === 5 && <div>{waitwhat}</div>}
                   </div>
                 </div>
               )}
