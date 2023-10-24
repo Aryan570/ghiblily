@@ -99,7 +99,7 @@ const ProjectDisplay = () => {
                 className="h-auto w-full object-cover rounded-lg shadow-lg cursor-auto"
                 sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
               />
-              {selectedProject === project.id && project.id!=3 && project.id!=6 (
+              {selectedProject === project.id && project.id!=3 && project.id!=6 && (
                 <div className="absolute inset-0 flex items-center justify-center bg-gray-900 bg-opacity-75 rounded-lg">
                   <div className="p-6 bg-white rounded-lg z-40 font-Pompiere">
                     <h3 className="text-xl font-semibold mb-4 text-emerald-400 underline">{project.title}</h3>
