@@ -27,7 +27,7 @@ const ContactSection = () => {
     }
   }
   const validname=(name)=>{
-       if(name.match(/^[a-zA-Z]+$/) && name.length > 4 ){
+       if(name.match(/^[a-z ,.'-]+$/i) && name.length > 4 ){
         return true;
        }
        else{
