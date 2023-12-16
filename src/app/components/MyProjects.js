@@ -8,7 +8,7 @@ const ProjectDisplay = () => {
     <pre className='font-Pompiere'>TailwindCSS</pre>
     <pre className='font-Pompiere'>MongoDB</pre></div>;
 
-  const waitwhat = <div>The tech stack at the Arigato Project consist primarily of :
+  const waitwhat = <div>The tech used in this project consist primarily of :
     <pre className='font-Pompiere'>TypeScript</pre>
     <pre className='font-Pompiere'>NextJS</pre>
     <pre className='font-Pompiere'>MongoDB</pre>
@@ -20,7 +20,7 @@ const ProjectDisplay = () => {
     <pre className='font-Pompiere'>NewsAPI</pre>
   </div>;
 
-  const HandGestures = <div>The tech stack at the NewsApp Project consist primarily of :
+  const HandGestures = <div>The tech used in this project consist primarily of :
     <pre className='font-Pompiere'>Python</pre>
     <pre className='font-Pompiere'>OpenCV</pre>
     <pre className='font-Pompiere'>MediaPipe</pre>
