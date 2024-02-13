@@ -30,7 +30,7 @@ const MyComponent = () => {
   }, [showSplash]);
   useEffect(() => {
     load('/Ghibli_real.mp3', {
-      loop:true,
+      loop: true,
       html5: true,
       format: 'mp3'
     });
@@ -62,24 +62,30 @@ const MyComponent = () => {
           onClick={handlePlayPause}
         >
           {Array.from({ length: 5 }).map((_, index) => (
-          <div
-            key={index}
-            className={`h-2 w-[2px] bg-slate-900  mx-[1px] ${isAnimating ? 'music-bars-animate' : ''
-              }`}
-            style={{ animationDuration: isAnimating ? animationDurations[index] : '0s' }}
-          ></div>
-        ))}
+            <div
+              key={index}
+              className={`h-2 w-[2px] bg-slate-900  mx-[1px] ${isAnimating ? 'music-bars-animate' : ''
+                }`}
+              style={{ animationDuration: isAnimating ? animationDurations[index] : '0s' }}
+            ></div>
+          ))}
         </button>
       </div>
       <div className={`fixed flex items-center justify-around inset-0  transition-opacity ${showSplash ? 'opacity-100 ' : 'opacity-0 pointer-events-none'}`}>
-        <Image className='object-cover contrast-75' src="/yesterday2.webp" alt='Mainpage' fill={true} quality={99}  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw" priority />
+        <Image className='object-cover' src="/banner.jpg" alt='Mainpage' fill={true} quality={99} priority />
         <div className={` rounded-full z-10 p-8 ${showSplash ? 'animate-fade-in' : 'animate-fade-out'}`}>
-          <h1 className="text-6xl font-bold mb-4 font-Pompiere text-white">Welcome to Ghiblily!</h1>
-          <button className="bg-transparent border-2 text-white font-bold py-2 px-4 rounded-full font-Pompiere text-xl" onClick={handleEnter}>
-            Enter
-          </button>
+          <div className='bg-green-500'>
+            <h1 className="text-6xl font-bold mb-4 font-Pompiere text-white">Welcome to Ghiblily!</h1>
+          </div>
+          <div className='bg-green-500 p-1 rounded-lg'>
+            <button className="bg-transparent border-2 text-white font-bold py-2 px-4 rounded-full font-Pompiere text-xl" onClick={handleEnter}>
+              Enter
+            </button>
+          </div>
         </div>
-        <div className='z-10 bottom-6 font-Pompiere text-2xl font-semibold text-white w-56'><p>Whenever someone creates something with all of their heart, then that creation is given a soul. - <span className='font-bold'>Hayao Miyazaki</span></p></div>
+        <div className='bg-green-500 z-10 p-4 rounded-lg'>
+          <div className='z-10 bottom-6 font-Pompiere text-2xl font-semibold text-white w-56'><p>Whenever someone creates something with all of their heart, then that creation is given a soul. - <span className='font-bold'>Hayao Miyazaki</span></p></div>
+        </div>
       </div>
     </>
   );
