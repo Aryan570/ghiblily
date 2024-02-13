@@ -72,19 +72,19 @@ const MyComponent = () => {
         </button>
       </div>
       <div className={`fixed flex items-center justify-around inset-0  transition-opacity ${showSplash ? 'opacity-100 ' : 'opacity-0 pointer-events-none'}`}>
-        <Image className='object-cover' src="/banner.jpg" alt='Mainpage' fill={true} quality={99} priority />
+        <Image className='object-cover' src="/banner.jpg" alt='Mainpage' fill={true} quality={100} priority />
         <div className={` rounded-full z-10 p-8 ${showSplash ? 'animate-fade-in' : 'animate-fade-out'}`}>
-          <div className='bg-green-500'>
-            <h1 className="text-6xl font-bold mb-4 font-Pompiere text-white">Welcome to Ghiblily!</h1>
+          <div className='bg-green-500 rounded-lg'>
+            <h1 className=" text-3xl md:text-6xl font-bold mb-4 font-Pompiere text-white">Welcome to Ghiblily!</h1>
           </div>
           <div className='bg-green-500 p-1 rounded-lg'>
-            <button className="bg-transparent border-2 text-white font-bold py-2 px-4 rounded-full font-Pompiere text-xl" onClick={handleEnter}>
+            <button className="bg-transparent border-2 text-white font-bold py-2 px-4 rounded-full font-Pompiere text-lg md:text-xl" onClick={handleEnter}>
               Enter
             </button>
           </div>
         </div>
         <div className='bg-green-500 z-10 p-4 rounded-lg'>
-          <div className='z-10 bottom-6 font-Pompiere text-2xl font-semibold text-white w-56'><p>Whenever someone creates something with all of their heart, then that creation is given a soul. - <span className='font-bold'>Hayao Miyazaki</span></p></div>
+          <div className='z-10 bottom-6 font-Pompiere text-lg md:text-2xl font-semibold text-white w-56'><p>Whenever someone creates something with all of their heart, then that creation is given a soul. - <span className='font-bold'>Hayao Miyazaki</span></p></div>
         </div>
       </div>
     </>
