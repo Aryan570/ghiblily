@@ -16,14 +16,14 @@ const Navbar = () => {
     
     return (
         <div className='relative min-h-screen'>
-            <Image className='object-cover absolute' src="/Movie.webp" fill alt='Front picture' quality={99} />
+            <Image className='object-cover absolute' src="/chhiro.jpg" fill alt='Front picture' quality={99} />
             <div className='flex relative  md:justify-around md:flex-row flex-col items-center h-20'>
                 <Link href={'/'}><Image className='saturate-200' src="/totoro_white.png" width={60} height={60} alt='totoro' sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw" /></Link>
                 <div>
-                    <ul className='flex justify-center  font-Pompiere'>
-                        <li className='mx-6 text-white text-2xl font-Pompiere transform hover:scale-x-110 hover:scale-y-105 transition duration-300 ease-out'><Link href="/">Home</Link></li>
-                        <li className='mx-6 text-white text-2xl font-Pompiere transform hover:scale-x-110 hover:scale-y-105 transition duration-300 ease-out '><Link  href="#Skills" onClick={handleScroll} >Expertise</Link></li>
-                        <li className='mx-6 text-white text-2xl font-Pompiere transform hover:scale-x-110 hover:scale-y-105 transition duration-300 ease-out'><Link  href="#AboutSite" onClick={handleScroll}>About Site</Link></li>
+                    <ul className='flex justify-center  font-Pompiere bg-emerald-300 rounded-lg p-1 mt-2'>
+                        <li className='mx-6 text-white  text-2xl font-Pompiere transform hover:scale-x-110 hover:scale-y-105 transition duration-300 ease-out'><Link href="/">Home</Link></li>
+                        <li className='mx-6 text-white  text-2xl font-Pompiere transform hover:scale-x-110 hover:scale-y-105 transition duration-300 ease-out'><Link  href="#Skills" onClick={handleScroll} >Expertise</Link></li>
+                        <li className='mx-6 text-white  text-2xl font-Pompiere transform hover:scale-x-110 hover:scale-y-105 transition duration-300 ease-out'><Link  href="#AboutSite" onClick={handleScroll}>About Site</Link></li>
                     </ul>
                 </div>
             </div>
