@@ -6,13 +6,20 @@ interface BlogPost {
     content: string;
     banner_url: string;
     description: string;
+    secret : string;
 }
 
 export async function POST(request: Request) {
     try {
         const body: BlogPost = await request.json();
-        const { title, content, banner_url, description } = body;
-        
+        const { title, content, banner_url, description, secret } = body;
+        if (secret !== process.env.THE_SECRET) {
+            console.error('Invalid secret provided');
+            return NextResponse.json(
+                { error: 'Invalid secret' },
+                { status: 403 }
+            );
+        }
         if (!title || !content || !banner_url || !description) {
             return NextResponse.json(
                 { error: 'Missing required fields' },
@@ -22,7 +29,7 @@ export async function POST(request: Request) {
 
         const { db } = await connectToDatabase();
         const date = new Date().toISOString();
-        
+
         const existingPost = await db.collection('blogs').findOne({ title });
         if (existingPost) {
             return NextResponse.json(
