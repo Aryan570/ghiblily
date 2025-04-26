@@ -10,7 +10,7 @@ interface Blog {
     description: string;
 }
 const Blogs = async () => {
-    const blogs_metadata = await fetch('http://localhost:3000/api/blog_metadata');
+    const blogs_metadata = await fetch(`${process.env.NEXT_PUBLIC_URL}/api/blog_metadata`);
     const blogs: Blog[] = await blogs_metadata.json();
     return (
         <div>
@@ -22,7 +22,7 @@ const Blogs = async () => {
                             <div>{blog.description}</div>
                         </div>
                         <div>
-                            <Image src={blog.banner_url} height={200} width={200} alt={blog.title}/>
+                            <Image src={blog.banner_url} height={200} width={200} alt={blog.title} />
                         </div>
                     </div>
                 </Link>
