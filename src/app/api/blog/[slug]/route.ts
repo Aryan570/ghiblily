@@ -1,10 +1,10 @@
 import { connectToDatabase } from '@/lib/mongodb';
 import { NextResponse } from 'next/server'
 
-export async function GET(request: Request, { params }: { params: { slug: string } }) {
+export async function GET(request: Request, context: { params: { slug: string } }) {
     try {
         const {db} = await connectToDatabase();
-        const { slug } = await params;
+        const { slug } = await context.params;
         const blogPost = await db.collection('blogs').findOne({ title: slug });
         if (!blogPost) {
             return NextResponse.json(
