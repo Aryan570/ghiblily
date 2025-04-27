@@ -1,8 +1,9 @@
 import Image from 'next/image';
 import Link from 'next/link';
+import { notFound } from 'next/navigation';
 import React from 'react'
 interface Blog {
-    id: string;
+    _id: string;
     title: string;
     banner_url: string;
     created_at: string;
@@ -11,11 +12,14 @@ interface Blog {
 }
 const Blogs = async () => {
     const blogs_metadata = await fetch(`${process.env.NEXT_PUBLIC_URL}/api/blog_metadata`);
+    if (!blogs_metadata.ok) {
+        return notFound();
+    }
     const blogs: Blog[] = await blogs_metadata.json();
     return (
         <div>
             {blogs.map((blog) => (
-                <Link key={blog.id} href={blog.link}>
+                <Link key={blog._id} href={blog.link}>
                     <div>
                         <div>
                             <div>{blog.title}</div>
