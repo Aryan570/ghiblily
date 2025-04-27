@@ -48,3 +48,7 @@ body {
 .markdown u {
   @apply underline decoration-2 underline-offset-2;
 }
+
+.pompiere-font {
+  font-family: var(--font-pompiere);
+}
