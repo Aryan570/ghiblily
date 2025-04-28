@@ -26,7 +26,7 @@ body {
 }
 
 .markdown {
-  @apply prose prose-lg max-w-none prose-headings:text-gray-900 prose-p:text-gray-700;
+  @apply prose lg:prose-lg max-w-prose prose-amber prose-p:text-lg prose-ul:leading-5 prose-img:rounded-2xl prose-headings:text-gray-900 prose-p:text-gray-700;
 }
 
 .markdown h1 {

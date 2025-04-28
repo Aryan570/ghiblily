@@ -1,4 +1,5 @@
 import Image from 'next/image';
+import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import React from 'react'
 import ReactMarkdown from 'react-markdown';
@@ -19,7 +20,7 @@ const ALLOWED_STYLE_PROPERTIES = [
   'padding',
   'text-decoration'
 ];
-const ALLOWED_PROTOCOLS = ['http', 'https'];
+const ALLOWED_PROTOCOLS = ['http', 'https', null];
 
 const Blog = async ({ params }: { params: Promise<{ slug: string }> }) => {
   const { slug } = await params;
@@ -34,7 +35,7 @@ const Blog = async ({ params }: { params: Promise<{ slug: string }> }) => {
   }
   const data = await res.json();
   return (
-    <div className="container mx-auto px-4 py-8">
+    <div className="container mx-auto px-4 py-8 pompiere-font">
       <Image
         className='w-full h-96 object-cover rounded-lg mb-8'
         src={data.banner_url}
@@ -63,9 +64,7 @@ const Blog = async ({ params }: { params: Promise<{ slug: string }> }) => {
                   }]
                 ],
                 a: [
-                  ['href', {
-                    values: [/^(?!javascript:|data:|file:).+$/]
-                  }],
+                  'href',
                   ['target', {
                     values: ['_blank', '_self']
                   }],
@@ -78,7 +77,7 @@ const Blog = async ({ params }: { params: Promise<{ slug: string }> }) => {
                     properties: ALLOWED_STYLE_PROPERTIES,
                     values: [/^(?!javascript:|data:|file:|expression|url).+$/]
                   }]
-                ]
+                ],
               },
               protocols: {
                 href: ALLOWED_PROTOCOLS,
@@ -89,12 +88,10 @@ const Blog = async ({ params }: { params: Promise<{ slug: string }> }) => {
           ]}
           components={{
             img: ({ node, ...props }) => {
-              // Access properties directly from node
               const src = node?.properties?.src;
               const alt = node?.properties?.alt || props.alt || 'Blog image';
               const width = node?.properties?.width ? parseInt(node.properties.width as string) : 400;
               const height = node?.properties?.height ? parseInt(node.properties.height as string) : 300;
-
               if (!src || typeof src !== 'string') {
                 console.warn('Missing or invalid image source');
                 return null;
@@ -107,7 +104,7 @@ const Blog = async ({ params }: { params: Promise<{ slug: string }> }) => {
                     alt={alt as string}
                     width={width}
                     height={height}
-                    className="rounded-lg mx-auto"
+                    // className="rounded-lg mx-auto"
                     loading="lazy"
                   />
                 );
@@ -115,7 +112,15 @@ const Blog = async ({ params }: { params: Promise<{ slug: string }> }) => {
                 console.error('Error loading image:', error);
                 return <span>Error loading image</span>;
               }
-            }
+            },
+            a: ({ node, ...props }) => {
+              const href = node?.properties?.href;
+              if (!href || typeof href !== 'string') {
+                console.warn('Missing or invalid link href');
+                return null;
+              }
+              return <Link href={href} target="_blank" rel="noopener noreferrer" {...props} />;
+            },
           }}
         >
           {data.content}

@@ -29,6 +29,7 @@ const AddBlog = () => {
                         <li> -- for images, use &lt;img&gt;tag instead of ![]</li>
                         <li> -- You can also give minimal style to image with attributes in tag itself.</li>
                         <li> -- BannerUrl will remain on the top of the article.</li>
+                        <li> -- try to use &lt;a&gt; for links, just like in html</li>
                     </ul>
                 </div>
             </div>
