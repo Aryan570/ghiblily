@@ -35,96 +35,98 @@ const Blog = async ({ params }: { params: Promise<{ slug: string }> }) => {
   }
   const data = await res.json();
   return (
-    <div className="container mx-auto px-4 py-8 pompiere-font">
-      <Image
-        className='w-full h-96 object-cover rounded-lg mb-8'
-        src={data.banner_url}
-        height={200}
-        width={200}
-        alt={data.title}
-      />
-      <h1 className="text-4xl font-bold mb-8">{data.title}</h1>
-      <div className="markdown">
-        <ReactMarkdown
-          remarkPlugins={[remarkGfm, remarkToc, [remarkEmoji, { emoticon: true }]]}
-          rehypePlugins={[
-            rehypeRaw,
-            [rehypeSanitize, {
-              ...defaultSchema,
-              attributes: {
-                ...defaultSchema.attributes,
-                img: [
-                  'src',
-                  'alt',
-                  'width',
-                  'height',
-                  ['style', {
-                    properties: ['width', 'height', 'object-fit'],
-                    values: [/^(?!javascript:|data:|file:).+$/]
-                  }]
-                ],
-                a: [
-                  'href',
-                  ['target', {
-                    values: ['_blank', '_self']
-                  }],
-                  ['rel', {
-                    values: ['noopener', 'noreferrer']
-                  }]
-                ],
-                span: [
-                  ['style', {
-                    properties: ALLOWED_STYLE_PROPERTIES,
-                    values: [/^(?!javascript:|data:|file:|expression|url).+$/]
-                  }]
-                ],
-              },
-              protocols: {
-                href: ALLOWED_PROTOCOLS,
-                src: ALLOWED_PROTOCOLS
-              }
-            }],
-            rehypeKatex
-          ]}
-          components={{
-            img: ({ node, ...props }) => {
-              const src = node?.properties?.src;
-              const alt = node?.properties?.alt || props.alt || 'Blog image';
-              const width = node?.properties?.width ? parseInt(node.properties.width as string) : 400;
-              const height = node?.properties?.height ? parseInt(node.properties.height as string) : 300;
-              if (!src || typeof src !== 'string') {
-                console.warn('Missing or invalid image source');
-                return null;
-              }
+    <div className='min-h-screen w-full flex justify-center pompiere-font'>
+      <div className="w-2/3 h-full flex flex-col justify-center items-center border-0 ">
+        <Image
+          className='w-full h-[25vh] object-cover mb-8'
+          src={data.banner_url}
+          height={200}
+          width={200}
+          alt={data.title}
+        />
+        <h1 className="text-4xl font-bold mb-8">{data.title}</h1>
+        <div className="markdown w-full">
+          <ReactMarkdown
+            remarkPlugins={[remarkGfm, remarkToc, [remarkEmoji, { emoticon: true }]]}
+            rehypePlugins={[
+              rehypeRaw,
+              [rehypeSanitize, {
+                ...defaultSchema,
+                attributes: {
+                  ...defaultSchema.attributes,
+                  img: [
+                    'src',
+                    'alt',
+                    'width',
+                    'height',
+                    ['style', {
+                      properties: ['width', 'height', 'object-fit'],
+                      values: [/^(?!javascript:|data:|file:).+$/]
+                    }]
+                  ],
+                  a: [
+                    'href',
+                    ['target', {
+                      values: ['_blank', '_self']
+                    }],
+                    ['rel', {
+                      values: ['noopener', 'noreferrer']
+                    }]
+                  ],
+                  span: [
+                    ['style', {
+                      properties: ALLOWED_STYLE_PROPERTIES,
+                      values: [/^(?!javascript:|data:|file:|expression|url).+$/]
+                    }]
+                  ],
+                },
+                protocols: {
+                  href: ALLOWED_PROTOCOLS,
+                  src: ALLOWED_PROTOCOLS
+                }
+              }],
+              rehypeKatex
+            ]}
+            components={{
+              img: ({ node, ...props }) => {
+                const src = node?.properties?.src;
+                const alt = node?.properties?.alt || props.alt || 'Blog image';
+                const width = node?.properties?.width ? parseInt(node.properties.width as string) : 400;
+                const height = node?.properties?.height ? parseInt(node.properties.height as string) : 300;
+                if (!src || typeof src !== 'string') {
+                  console.warn('Missing or invalid image source');
+                  return null;
+                }
 
-              try {
-                return (
-                  <Image
-                    src={src}
-                    alt={alt as string}
-                    width={width}
-                    height={height}
-                    // className="rounded-lg mx-auto"
-                    loading="lazy"
-                  />
-                );
-              } catch (error) {
-                console.error('Error loading image:', error);
-                return <span>Error loading image</span>;
-              }
-            },
-            a: ({ node, ...props }) => {
-              const href = node?.properties?.href;
-              if (!href || typeof href !== 'string') {
-                console.warn('Missing or invalid link href');
-                return null;
-              }
-              return <Link href={href} target="_blank" rel="noopener noreferrer" {...props} />;
-            },
-          }}
-        >
-          {data.content}
-        </ReactMarkdown>
+                try {
+                  return (
+                    <Image
+                      src={src}
+                      alt={alt as string}
+                      width={width}
+                      height={height}
+                      // className="rounded-lg mx-auto"
+                      loading="lazy"
+                    />
+                  );
+                } catch (error) {
+                  console.error('Error loading image:', error);
+                  return <span>Error loading image</span>;
+                }
+              },
+              a: ({ node, ...props }) => {
+                const href = node?.properties?.href;
+                if (!href || typeof href !== 'string') {
+                  console.warn('Missing or invalid link href');
+                  return null;
+                }
+                return <Link href={href} target="_blank" rel="noopener noreferrer" {...props} />;
+              },
+            }}
+          >
+            {data.content}
+          </ReactMarkdown>
+        </div>
       </div>
     </div>
   )

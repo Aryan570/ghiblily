@@ -20,7 +20,7 @@ const AddBlog = () => {
     };
 
     return (
-        <div className='h-screen w-full flex justify-around items-center bg-slate-900 inset-0 pompiere-font'>
+        <div className='h-screen w-full flex justify-around items-center inset-0 pompiere-font'>
             <div className='w-1/2 flex items-center justify-center'>
                 <div className='w-1/2'>
                     <h1 className='text-4xl text-slate-300 mb-4'>Rules for writing content:</h1>

@@ -1,10 +1,10 @@
 @import "tailwindcss";
 @plugin "@tailwindcss/typography";
 :root {
-  --background: #ffffff;
+  --background: #ffffffe2;
   --foreground: #171717;
 }
-/* 
+
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
@@ -14,10 +14,11 @@
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #0a0a0a;
+    /* --background: #09012c; */
+    --background: #0f172b;
     --foreground: #ededed;
   }
-} */
+}
 
 body {
   background: var(--background);
@@ -26,7 +27,7 @@ body {
 }
 
 .markdown {
-  @apply prose lg:prose-lg max-w-prose prose-amber prose-p:text-lg prose-ul:leading-5 prose-img:rounded-2xl prose-headings:text-gray-900 prose-p:text-gray-700;
+  @apply prose lg:prose-lg min-w-full w-full prose-amber prose-p:text-lg prose-ul:leading-5 prose-img:rounded-2xl dark:prose-invert;
 }
 
 .markdown h1 {
