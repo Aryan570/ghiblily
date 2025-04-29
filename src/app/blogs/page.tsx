@@ -18,6 +18,7 @@ const Blogs = async () => {
     const blogs: Blog[] = await blogs_metadata.json();
     return (
         <div className='min-h-screen hero w-full flex flex-col justify-center items-center pompiere-font'>
+            <div className='font-bold text-2xl mb-4'>Welcome to the rock</div>
             {blogs.map((blog) => (
                 <Link className='w-1/2 hover:scale-[1.03] transition-transform duration-300 ease-out mb-2.5 backdrop-blur-xs' key={blog._id} href={blog.link}>
                     <div className='flex border-1 border-slate-400 max-h-1/12 h-[20vh] overflow-hidden'>
