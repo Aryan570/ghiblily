@@ -37,10 +37,10 @@ const AddBlog = () => {
                 <div className='w-1/2 border-1 rounded-2xl border-slate-600 p-6 text-xl'>
                     <h1>Hey Aryan!! - Wanna add a blog?</h1>
                     <form className='flex flex-col' onSubmit={handleSubmit}>
-                        <input className='border-slate-600 border-1 my-1 rounded-lg p-2' type="text" name="title" placeholder="Title" required maxLength={25} />
+                        <input className='border-slate-600 border-1 my-1 rounded-lg p-2' type="text" name="title" placeholder="Title" required maxLength={50} />
                         <input className='border-slate-600 border-1 my-1 rounded-lg p-2' type="text" name="banner_url" placeholder="Banner URL" required />
-                        <textarea rows={10} className='border-slate-600 border-1 my-1 rounded-lg p-2 resize-none' name="content" placeholder="Content" required></textarea>
-                        <input className='border-slate-600 border-1 my-1 rounded-lg p-2' type="text" name="description" placeholder="Description" required  maxLength={50} />
+                        <textarea rows={10} className='border-slate-600 border-1 my-1 rounded-lg p-2 resize-none scrollbar-hide' name="content" placeholder="Content" required></textarea>
+                        <input className='border-slate-600 border-1 my-1 rounded-lg p-2' type="text" name="description" placeholder="Description" required  maxLength={200} />
                         <input className='border-slate-600 border-1 my-1 rounded-lg p-2' type="password" name="secret" placeholder="Secret - Only Owner knows it!" required />
                         <button className='border-slate-600 border-1 my-1 rounded-lg p-2 cursor-pointer active:bg-slate-400 hover:bg-slate-500' type="submit">Add Blog</button>
                     </form>

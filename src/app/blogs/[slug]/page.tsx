@@ -35,15 +35,15 @@ const Blog = async ({ params }: { params: Promise<{ slug: string }> }) => {
   }
   const data = await res.json();
   return (
-    <div className='min-h-screen w-full flex justify-center pompiere-font'>
-      <div className="w-2/3 h-full flex flex-col justify-center items-center border-0 ">
-        <Image
-          className='w-full h-[25vh] object-cover mb-8'
-          src={data.banner_url}
-          height={200}
-          width={200}
-          alt={data.title}
-        />
+    <div className='min-h-screen w-full flex flex-col justify-center items-center pompiere-font'>
+      <Image
+        className='w-3/4 h-[40vh] object-cover -mb-16 brightness-75'
+        src={data.banner_url}
+        height={200}
+        width={200}
+        alt={data.title}
+      />
+      <div className="w-2/3 h-full flex flex-col justify-center border-0 backdrop-blur-3xl p-8">
         <h1 className="text-4xl font-bold mb-8">{data.title}</h1>
         <div className="markdown w-full">
           <ReactMarkdown
