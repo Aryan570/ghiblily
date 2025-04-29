@@ -35,7 +35,7 @@ const Blog = async ({ params }: { params: Promise<{ slug: string }> }) => {
   }
   const data = await res.json();
   return (
-    <div className='min-h-screen w-full flex flex-col justify-center items-center pompiere-font'>
+    <div className='min-h-screen w-full flex flex-col justify-center items-center pompiere-font hero'>
       <Image
         className='w-3/4 h-[40vh] object-cover -mb-16 brightness-75'
         src={data.banner_url}
@@ -47,7 +47,7 @@ const Blog = async ({ params }: { params: Promise<{ slug: string }> }) => {
         <h1 className="text-4xl font-bold mb-8">{data.title}</h1>
         <div className="markdown w-full">
           <ReactMarkdown
-            remarkPlugins={[remarkGfm, remarkToc, [remarkEmoji, { emoticon: true }]]}
+            remarkPlugins={[remarkGfm, remarkToc, remarkEmoji]}
             rehypePlugins={[
               rehypeRaw,
               [rehypeSanitize, {
@@ -105,7 +105,7 @@ const Blog = async ({ params }: { params: Promise<{ slug: string }> }) => {
                       alt={alt as string}
                       width={width}
                       height={height}
-                      // className="rounded-lg mx-auto"
+                      className="mx-auto"
                       loading="lazy"
                     />
                   );
