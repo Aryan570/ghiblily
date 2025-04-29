@@ -17,16 +17,16 @@ const Blogs = async () => {
     }
     const blogs: Blog[] = await blogs_metadata.json();
     return (
-        <div>
+        <div className='min-h-screen w-full flex flex-col justify-center items-center pompiere-font'>
             {blogs.map((blog) => (
-                <Link key={blog._id} href={blog.link}>
-                    <div>
-                        <div>
-                            <div>{blog.title}</div>
-                            <div>{blog.description}</div>
+                <Link className='w-1/2' key={blog._id} href={blog.link}>
+                    <div className='flex border-1 rounded-4xl border-slate-400 max-h-1/12 h-[20vh] overflow-hidden'>
+                        <div className='w-2/3 justify-center items-center flex flex-col '>
+                            <div className='text-2xl font-bold'>{blog.title}</div>
+                            <div className='font-semibold'>{blog.description}</div>
                         </div>
-                        <div>
-                            <Image src={blog.banner_url} height={200} width={200} alt={blog.title} />
+                        <div className='w-1/3 h-full flex justify-center items-center'>
+                            <Image className='object-cover w-full [mask-image:linear-gradient(to_right,transparent,white_50%)] contrast-75' src={blog.banner_url} height={100} width={100} alt={blog.title} />
                         </div>
                     </div>
                 </Link>
