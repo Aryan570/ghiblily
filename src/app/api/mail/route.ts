@@ -1,11 +1,19 @@
 import { NextRequest, NextResponse } from "next/server";
 import nodemailer from "nodemailer"
+import { z } from "zod";
+
+const MailSchema = z.object({
+    name: z.string().min(3, { message: "Name is required" }),
+    email: z.string().email({ message: "Invalid email address" }),
+    message: z.string().min(5, "Message is required").max(2000, "Message too long"),
+});
 
 export async  function POST(request : NextRequest){
     const { name, email, message } = await request.json();
-    if (!name || !email || !message) {
+    const parsedData = MailSchema.safeParse({ name, email, message });
+    if (!parsedData.success) {
         return NextResponse.json(
-            {error : "Please fill all the fields"},
+            { error: parsedData.error.errors.map(e => e.message).join(", ") },
             {status : 400}
         )
     }

@@ -25,7 +25,8 @@
     "rehype-sanitize": "^6.0.0",
     "remark-emoji": "^5.0.1",
     "remark-gfm": "^4.0.1",
-    "remark-toc": "^9.0.0"
+    "remark-toc": "^9.0.0",
+    "zod": "^3.24.3"
   },
   "devDependencies": {
     "@eslint/eslintrc": "^3",
