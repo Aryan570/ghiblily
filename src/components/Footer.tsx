@@ -4,7 +4,7 @@ import React from 'react'
 
 const Footer = () => {
     return (
-        <footer className='w-full flex justify-center items-center mx-auto max-w-screen pompiere-font mb-4'>
+        <footer className='w-full flex justify-center items-center mx-auto max-w-full pompiere-font mb-4'>
             <div className='md:w-full justify-center items-center'>
                 <div className='md:flex md:justify-around md:items-center mx-auto w-full'>
                     <span className="md:w-1/2 w-full text-base sm:text-center px-2">© 2025 <Link href="/">Ghiblily™</Link>. All Rights Reserved.</span>
