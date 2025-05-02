@@ -24,10 +24,10 @@ const Contact = () => {
         }
     }
     return (
-        <div className='container flex flex-col md:flex-row items-center justify-center mx-auto my-10 p-4'>
-            <div className='container max-w-6xl flex flex-col md:flex-row justify-center items-center overflow-hidden'>
+        <div className='container flex flex-col lg:flex-row items-center justify-center mx-auto my-10 p-4'>
+            <div className='container max-w-6xl flex flex-col lg:flex-row justify-center items-center overflow-hidden'>
                 <Image className='rounded-lg shadow-lg mx-auto' src={picture} width={400} height={400} alt='rises' unoptimized />
-                <div className='max-w-md mx-auto backdrop-blur-sm p-8 rounded-lg shadow-lg mt-4 md:mt-0'>
+                <div className='max-w-md mx-auto backdrop-blur-sm p-8 rounded-lg shadow-lg mt-4 lg:mt-0'>
                     <h3 className='font-semibold text-2xl mb-4'>Get in Touch</h3>
                     <p className="mb-6 text-lg">
                         I would love to hear from you! If you have any questions, feedback, or inquiries, please feel free to reach out to me using the contact form.
