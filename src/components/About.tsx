@@ -22,9 +22,8 @@ const About = () => {
             <Image className='rounded-lg w-full' src={kiki} width={400} height={400} alt='Picture_of_water' unoptimized />
           </div>
         </div>
-
       </section>
-      <hr className="h-px max-w-6xl mx-auto my-8 bg-[#ededed] border-0" />
+      <div className='w-full flex justify-center items-center'><hr className="h-px max-w-6xl w-full mx-2 my-8 bg-[#ededed] border-0" /></div>
     </>
   )
 }

@@ -40,7 +40,7 @@ const Contact = () => {
                         <label htmlFor='message' className=''>Message</label>
                         <textarea className='resize-none w-full focus:outline-none border-2 px-2 py-2 rounded-md dark:border-gray-300 border-gray-500' name='message' rows={4} minLength={5} maxLength={2000} required />
                         <p className=''>{err}</p>
-                        <button className='cursor-pointer float-left w-fit dark:bg-gray-200 dark:text-emerald-700 bg-emerald-600 text-gray-200 rounded-md px-2 py-2' type='submit'>Submit</button>
+                        <button className='cursor-pointer float-left w-fit dark:bg-gray-100 dark:text-emerald-700 bg-emerald-600 text-gray-100 rounded-md px-2 py-2' type='submit'>Submit</button>
                     </form>
                 </div>
             </div>
