@@ -27,7 +27,7 @@ const Contact = () => {
         <div className='container flex flex-col lg:flex-row items-center justify-center mx-auto my-10 p-4'>
             <div className='container max-w-6xl flex flex-col lg:flex-row justify-center items-center overflow-hidden'>
                 <Image className='rounded-lg shadow-lg mx-auto' src={picture} width={400} height={400} alt='rises' unoptimized />
-                <div className='max-w-md mx-auto backdrop-blur-sm p-8 rounded-lg shadow-lg mt-4 lg:mt-0'>
+                <div className='max-w-md mx-auto p-8 rounded-lg mt-4 lg:mt-0'>
                     <h3 className='font-semibold text-2xl mb-4'>Get in Touch</h3>
                     <p className="mb-6 text-lg">
                         I would love to hear from you! If you have any questions, feedback, or inquiries, please feel free to reach out to me using the contact form.
@@ -40,7 +40,7 @@ const Contact = () => {
                         <label htmlFor='message' className=''>Message</label>
                         <textarea className='resize-none w-full focus:outline-none border-2 px-2 py-2 rounded-md dark:border-gray-300 border-gray-500' name='message' rows={4} minLength={5} maxLength={2000} required />
                         <p className=''>{err}</p>
-                        <button className='cursor-pointer float-left w-fit' type='submit'>Submit</button>
+                        <button className='cursor-pointer float-left w-fit dark:bg-gray-200 dark:text-emerald-700 bg-emerald-600 text-gray-200 rounded-md px-2 py-2' type='submit'>Submit</button>
                     </form>
                 </div>
             </div>
