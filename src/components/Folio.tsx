@@ -7,7 +7,9 @@ import Projects from './Projects'
 const Folio = () => {
   return (
     <div className=' min-h-screen hero_portfolio w-full pompiere-font overflow-hidden'>
-      <Projects />
+      <div className='w-full flex justify-center items-center'>
+        <Projects />
+      </div>
       <About />
       <Contact />
       <Footer />
