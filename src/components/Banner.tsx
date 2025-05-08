@@ -7,8 +7,8 @@ const Banner = ({ tog_ban }: { tog_ban: () => void }) => {
     <div className='h-screen w-full overflow-hidden pompiere-font'>
       <div className='absolute flex flex-col-reverse lg:flex-row w-full h-full justify-around items-center'>
         <div className='mx-2'>
-          <h1 className='text-5xl font-bold text-center hero_portfolio rounded-xl mb-2 p-2 -skew-2'>Welcome to my Ghiblily</h1>
-          <button className='cursor-pointer hero_portfolio rounded-xl w-full text-2xl border-0 -skew-1' onClick={tog_ban}>Enter</button>
+          <h1 className='text-5xl font-bold text-center hero_portfolio rounded-xl mb-2 p-2 -rotate-2'>Welcome to my Ghiblily</h1>
+          <button className='cursor-pointer hero_portfolio rounded-xl w-full text-2xl border-0 -rotate-1' onClick={tog_ban}>Enter</button>
         </div>
         <div className='p-4 rounded-xl hero_portfolio w-fit m-2'>
           <p className='text-2xl text-wrap wrap-break-word relative max-w-sm'>Whenever someone creates something with all of their heart, then that creation is given a soul.<br></br> <span className='text-nowrap float-right'>- Hayao Miyazaki</span></p>
