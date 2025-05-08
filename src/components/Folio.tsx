@@ -9,7 +9,7 @@ const Folio = () => {
   return (
     <div className=' min-h-screen hero_portfolio w-full pompiere-font overflow-hidden'>
       <Test/>
-      <div className='w-full flex justify-center items-center'>
+      <div className='flex h-[300vh] justify-center items-center'>
         <Projects />
       </div>
       <About />
