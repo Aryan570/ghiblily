@@ -4,8 +4,10 @@ import React, { useLayoutEffect } from 'react'
 import first_image from '@/../public/i_have_this_alr.webp'
 import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/dist/ScrollTrigger'
-import { Star } from 'lucide-react'
+import { Github, Heart, Star } from 'lucide-react'
 import tmp_image from '@/../public/banner.jpg'
+import himmel from '@/../public/Himmel_Dis.png'
+import Link from 'next/link'
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -40,11 +42,11 @@ const Projects = () => {
           <div className="max-w-6xl w-full flex flex-col md:flex-row items-center justify-center gap-8 md:gap-44">
             <div className="relative md:scale-150 z-10">
               <Star className="absolute -top-4 -left-4 w-8 h-8 text-yellow-300 fill-yellow-300 animate-pulse" />
-              {/* <Heart className="absolute -bottom-3 -right-3 w-7 h-7 text-pink-400 fill-pink-400 animate-bounce" /> */}
+              <Heart className="absolute -bottom-3 -right-3 w-7 h-7 text-pink-400 fill-pink-400 animate-bounce" />
               <div className="relative transform -rotate-2 hover:rotate-0 transition-all duration-300 z-10 ">
                 <Image
-                  src={tmp_image}
-                  alt="Featured image"
+                  src={himmel}
+                  alt="Himmel_Preview_Image"
                   width={280}
                   height={280}
                   className="rounded-xl border-4 border-white shadow-lg"
@@ -61,7 +63,9 @@ const Projects = () => {
                 without using a card design. The subtle decorations add character!
               </p>
               <div className="flex gap-2 mt-6 justify-center md:justify-start">
-                <span className="inline-block h-3 w-3 rounded-full bg-pink-300"></span>
+                <Link className='hover:scale-110 transition-transform duration-300 ease-out' href="https://github.com/Aryan570/Himmel" target='_blank'>
+                  <Github className='w-5 h-5' />
+                </Link>
                 <span className="inline-block h-3 w-3 rounded-full bg-purple-300"></span>
                 <span className="inline-block h-3 w-3 rounded-full bg-blue-300"></span>
               </div>
