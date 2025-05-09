@@ -24,7 +24,7 @@ const Contact = () => {
         }
     }
     return (
-        <div className='container flex flex-col lg:flex-row items-center justify-center mx-auto my-10 p-4'>
+        <div className='container flex flex-col lg:flex-row items-center justify-center mx-auto my-10 p-4 z-20'>
             <div className='container max-w-6xl flex flex-col lg:flex-row justify-center items-center overflow-hidden'>
                 <Image className='rounded-lg shadow-lg mx-auto' src={picture} width={400} height={400} alt='rises' unoptimized />
                 <div className='max-w-md mx-auto p-8 rounded-lg mt-4 lg:mt-0'>
