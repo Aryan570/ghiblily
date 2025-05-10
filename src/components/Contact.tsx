@@ -1,8 +1,17 @@
 import Image from 'next/image'
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import picture from '@/../public/rises2trimmed.webp'
 const Contact = () => {
     const [err, set_err] = useState<string>("");
+    useEffect(() => {
+        const second = setTimeout(() => {
+            set_err("");
+        }, 3000);
+        return () => {
+            clearTimeout(second);
+        }
+    }, [err])
+
     async function handle_submit(e: React.FormEvent<HTMLFormElement>) {
         e.preventDefault();
         const form = e.currentTarget;
