@@ -60,15 +60,15 @@ const Projects = () => {
               </div>
               <div className="relative text-center md:text-left max-w-md z-10 hero_portfolio p-4 rounded-xl rotate-1">
                 <h1 className="text-2xl md:text-3xl font-bold mb-3 relative inline-block">
-                  Himmel
+                  himmel
                 </h1>
-                <p className=" leading-relaxed mt-4 text-lg">
+                <div className=" leading-relaxed mt-4 text-lg">
                   <ul className='list-disc pl-4'>
                     <li>A real-time, turn-based 1v1 online game that you can play with your friend, featuring a server written in Rust and a frontend in NextJS.</li>
                     <li>Developed a multi-threaded server in Rust for concurrent game sessions.</li>
                     <li>Conducted load testing with k6, simulating over 1000 concurrent WebSocket connections to evaluate server scalability and identify performance bottlenecks.</li>
                   </ul>
-                </p>
+                </div>
                 <div className="flex gap-2 mt-6 justify-center md:justify-start">
                   <Link className='hover:scale-110 transition-transform duration-300 ease-out' href="https://github.com/Aryan570/Himmel" target='_blank'>
                     <Github className='w-5 h-5' />
@@ -103,13 +103,13 @@ const Projects = () => {
                 <h1 className="text-2xl md:text-3xl font-bold mb-3 relative inline-block">
                   soup
                 </h1>
-                <p className=" leading-relaxed mt-4 text-lg">
+                <div className=" leading-relaxed mt-4 text-lg">
                   <ul className='list-disc pl-4'>
                     <li>Real-time Smart Energy Monitoring System for tracking various electrical appliance parameters such as voltage, power, etc. The full report is available here.</li>
                     <li>The dashboard includes a safety feature that sends email notifications to the user in the event of abnormal parameters or if their budget is exceeded.</li>
                     <li>Data is collected using an Arduino UNO, transmitted to MongoDB, and presented to the user in real time.</li>
                   </ul>
-                </p>
+                </div>
                 <div className="flex gap-2 mt-6 justify-center md:justify-start">
                   <Link className='hover:scale-110 transition-transform duration-300 ease-out' href="https://github.com/Aryan570/soup" target='_blank'>
                     <Github className='w-5 h-5' />
@@ -143,14 +143,19 @@ const Projects = () => {
               </div>
               <div className="relative text-center md:text-left max-w-md z-10 hero_portfolio p-4 rounded-xl rotate-1">
                 <h1 className="text-2xl md:text-3xl font-bold mb-3 relative inline-block">
-                  Soup
+                  http-rust
                 </h1>
-                <p className=" leading-relaxed mt-4 text-lg">
-                  This is a lovely description about this image. The floating elements create a playful, cute aesthetic
-                  without using a card design. The subtle decorations add character!
-                </p>
+                <div className=" leading-relaxed mt-4 text-lg">
+                  <ul className='list-disc pl-4'>
+                    <li>Implemented a multithreaded HTTP server in Rust, capable of serving static files and handling GET & POST requests.</li>
+                    <li>Managed HTTP headers and connection lifecycles manually, correctly handling Content-Length parsing, persistent vs. close semantics (Connection: close), and appropriate status codes (200 OK, 201 Created, 404 Not Found)</li>
+                    <li>gzip compression for payloads when the Accept-Encoding: gzip header is present</li>
+                  </ul>
+                </div>
                 <div className="flex gap-2 mt-6 justify-center md:justify-start">
-                  <span className="inline-block h-3 w-3 rounded-full bg-pink-300"></span>
+                <Link className='hover:scale-110 transition-transform duration-300 ease-out' href="https://github.com/Aryan570/http-rust" target='_blank'>
+                    <Github className='w-5 h-5' />
+                  </Link>
                   <span className="inline-block h-3 w-3 rounded-full bg-purple-300"></span>
                   <span className="inline-block h-3 w-3 rounded-full bg-blue-300"></span>
                 </div>
