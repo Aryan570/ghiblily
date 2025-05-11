@@ -4,12 +4,12 @@ import React, { useLayoutEffect } from 'react'
 import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/dist/ScrollTrigger'
 import { Github, Star } from 'lucide-react'
-import tmp_image from '@/../public/banner.jpg'
 import himmel from '@/../public/Himmel_Dis.png'
 import porco from '@/../public/porco026.jpg'
 import soup from '@/../public/Soup_display.jpeg'
 import marnie from '@/../public/marnie006.jpg'
-import poppy from '@/../public/kokurikozaka003.jpg'
+import poppy from '@/../public/karigurashi001.jpg'
+import rust from '@/../public/rust2.jpg'
 import Link from 'next/link'
 
 gsap.registerPlugin(ScrollTrigger);
@@ -19,7 +19,6 @@ const Projects = () => {
   useLayoutEffect(() => {
     const ctx = gsap.context(() => {
       const slides = gsap.utils.toArray('.horizontal-panel')
-      // const totalWidth = (slides.length - 1) * 100
       gsap.to(slides, {
         xPercent: -100 * (slides.length - 1),
         ease: 'none',
@@ -58,7 +57,7 @@ const Projects = () => {
                   <div className="absolute -top-3 left-1/2 -translate-x-1/2 w-16 h-5 bg-emerald-600/80 rotate-6"></div>
                 </div>
               </div>
-              <div className="relative text-center md:text-left max-w-md z-10 hero_portfolio p-4 rounded-xl rotate-1">
+              <div className="relative text-center md:text-left max-w-md z-10 hero_portfolio p-4 rounded-xl rotate-1 hover:scale-[1.01] transition-transform duration-300">
                 <h1 className="text-2xl md:text-3xl font-bold mb-3 relative inline-block">
                   himmel
                 </h1>
@@ -99,7 +98,7 @@ const Projects = () => {
                   <div className="absolute -top-3 left-1/2 -translate-x-1/2 w-16 h-5 bg-emerald-600/80 rotate-6"></div>
                 </div>
               </div>
-              <div className="relative text-center md:text-left max-w-md z-10 hero_portfolio p-4 rounded-xl rotate-1">
+              <div className="relative text-center md:text-left max-w-md z-10 hero_portfolio p-4 rounded-xl rotate-1 hover:scale-[1.01] transition-transform duration-300">
                 <h1 className="text-2xl md:text-3xl font-bold mb-3 relative inline-block">
                   soup
                 </h1>
@@ -132,7 +131,7 @@ const Projects = () => {
                 {/* <Heart className="absolute -bottom-3 -right-3 w-7 h-7 text-pink-400 fill-pink-400 animate-bounce" /> */}
                 <div className="relative transform -rotate-2 hover:rotate-0 transition-all duration-300 z-10 ">
                   <Image
-                    src={tmp_image}
+                    src={rust}
                     alt="Featured image"
                     width={280}
                     height={280}
@@ -141,7 +140,7 @@ const Projects = () => {
                   <div className="absolute -top-3 left-1/2 -translate-x-1/2 w-16 h-5 bg-emerald-600/80 rotate-6"></div>
                 </div>
               </div>
-              <div className="relative text-center md:text-left max-w-md z-10 hero_portfolio p-4 rounded-xl rotate-1">
+              <div className="relative text-center md:text-left max-w-md z-10 hero_portfolio p-4 rounded-xl rotate-1 hover:scale-[1.01] transition-transform duration-300">
                 <h1 className="text-2xl md:text-3xl font-bold mb-3 relative inline-block">
                   http-rust
                 </h1>
@@ -162,7 +161,7 @@ const Projects = () => {
               </div>
             </div>
           </div>
-          <Image className='w-full h-full object-cover' src={poppy} width={400} height={400} alt='Himmel_background_image' />
+          <Image className='w-full h-full object-cover' src={poppy} width={400} height={400} alt='Himmel_background_image' quality={100}/>
           <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent"></div>
         </div>
       </div>
