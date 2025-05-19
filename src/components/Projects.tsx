@@ -58,7 +58,7 @@ const Projects = () => {
                 </div>
               </div>
               <div className="relative text-center md:text-left max-w-md z-10 hero_portfolio p-4 rounded-xl rotate-1 hover:scale-[1.01] transition-transform duration-300">
-                <h1 className="text-2xl md:text-3xl font-bold mb-3 relative inline-block">
+                <h1 className="text-2xl md:text-3xl font-bold mb-3 relative inline-block decoration-wavy underline decoration-1 underline-offset-2">
                   himmel
                 </h1>
                 <div className=" leading-relaxed mt-4 text-lg">
@@ -99,7 +99,7 @@ const Projects = () => {
                 </div>
               </div>
               <div className="relative text-center md:text-left max-w-md z-10 hero_portfolio p-4 rounded-xl rotate-1 hover:scale-[1.01] transition-transform duration-300">
-                <h1 className="text-2xl md:text-3xl font-bold mb-3 relative inline-block">
+                <h1 className="text-2xl md:text-3xl font-bold mb-3 relative inline-block decoration-wavy underline decoration-1 underline-offset-2">
                   soup
                 </h1>
                 <div className=" leading-relaxed mt-4 text-lg">
@@ -141,7 +141,7 @@ const Projects = () => {
                 </div>
               </div>
               <div className="relative text-center md:text-left max-w-md z-10 hero_portfolio p-4 rounded-xl rotate-1 hover:scale-[1.01] transition-transform duration-300">
-                <h1 className="text-2xl md:text-3xl font-bold mb-3 relative inline-block">
+                <h1 className="text-2xl md:text-3xl font-bold mb-3 relative inline-block decoration-wavy underline decoration-1 underline-offset-2">
                   http-rust
                 </h1>
                 <div className=" leading-relaxed mt-4 text-lg">

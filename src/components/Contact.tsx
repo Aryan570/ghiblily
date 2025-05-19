@@ -37,7 +37,7 @@ const Contact = () => {
             <div className='container max-w-6xl flex flex-col lg:flex-row justify-center items-center overflow-hidden'>
                 <Image className='rounded-lg shadow-lg mx-auto' src={picture} width={400} height={400} alt='rises' unoptimized />
                 <div className='max-w-md mx-auto p-8 rounded-lg mt-4 lg:mt-0'>
-                    <h3 className='font-semibold text-2xl mb-4'>Get in Touch</h3>
+                    <h3 className='font-semibold text-2xl mb-4'>Get in <span className='decoration-wavy underline decoration-1 underline-offset-2'>touch</span></h3>
                     <p className="mb-6 text-lg">
                         I would love to hear from you! If you have any questions, feedback, or inquiries, please feel free to reach out to me using the contact form.
                     </p>

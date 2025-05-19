@@ -1,0 +1,30 @@
+.animation {
+  height: 100vh;
+  background: #9ab3f5;
+  /* position: relative; */
+}
+
+.scene {
+  height: 100%;
+  width: 100%;
+}
+
+.btn {
+  position: fixed;
+  top: 15px;
+  right: 30px;
+  padding: 0;
+  background: transparent;
+  border: none;
+  color: #2d3436;
+  /* font-family: "Sacramento", cursive; */
+  font-size: 2rem;
+  cursor: pointer;
+}
+
+.btn:active,
+.btn:focus {
+  text-decoration: underline;
+  border: none;
+  outline: none;
+}

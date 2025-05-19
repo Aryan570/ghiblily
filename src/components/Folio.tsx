@@ -4,10 +4,12 @@ import Footer from '@/components/Footer'
 import About from '@/components/About'
 import Projects from '@/components/Projects'
 import Test from '@/components/Test'
+import PlantAnimation from './Flower'
 
 const Folio = () => {
   return (
     <div className=' min-h-screen hero_portfolio w-full pompiere-font overflow-hidden'>
+      <PlantAnimation />
       <Test />
       <div className='flex h-[300vh] justify-center items-center'>
         <Projects />
