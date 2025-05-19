@@ -11,7 +11,7 @@ const Banner = ({ tog_ban }: { tog_ban: () => void }) => {
           <button className='cursor-pointer hero_portfolio rounded-xl w-full text-2xl border-0 -rotate-1' onClick={tog_ban}>Enter</button>
         </div>
         <div className='p-4 rounded-xl hero_portfolio w-fit m-2'>
-          <p className='text-2xl text-wrap wrap-break-word relative max-w-sm'>Whenever someone creates something with all of their heart, then that creation is given a soul.<br></br> <span className='text-nowrap float-right'>- Hayao Miyazaki</span></p>
+          <p className='text-2xl text-wrap wrap-break-word relative max-w-sm animate-in'>Whenever someone creates something with all of their heart, then that creation is given a soul.<br></br> <span className='text-nowrap float-right'>- Hayao Miyazaki</span></p>
         </div>
       </div>
       <Image className='object-cover w-full h-full' placeholder='blur' src={banner} width={1000} height={1000} alt='banner_inage' />

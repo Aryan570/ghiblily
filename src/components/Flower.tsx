@@ -67,8 +67,8 @@ const getSettings = () => {
 
   return {
     colors: {
-      background: "#9ab3f5",
-      fill: "#a3d8f4",
+      background: "#007a55",
+      fill: "#00a63e",
       stroke: "#2d3436",
     },
     animation: {
