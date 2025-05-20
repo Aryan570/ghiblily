@@ -23,12 +23,10 @@ const imageURLs = [
 
 const Folio = () => {
   return (
-    <div className=' min-h-screen hero_portfolio w-full pompiere-font overflow-hidden'>
+    <div className=' min-h-screen hero_portfolio pompiere-font overflow-hidden'>
       <PlantAnimation />
       <RotatingCircle imageURLs={imageURLs} spinDuration={30} size={500} />
-      <div className='flex h-[300dvh] justify-center items-center bg-amber-200'>
-        <Projects />
-      </div>
+      <Projects />
       <div className='w-full flex justify-center items-center mt-16'><hr className="h-px max-w-6xl w-full mx-2 my-8 bg-[#ededed] border-0" /></div>
       <About />
       <Contact />
