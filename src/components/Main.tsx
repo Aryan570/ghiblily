@@ -13,7 +13,7 @@ const sound = new Howl({
 })
 
 const MusicControl = () => {
-    const [, set_is_playing] = useState<boolean>(sound.playing());
+    const [is_playing, set_is_playing] = useState<boolean>(sound.playing());
 
     function toggle_music(){
         const p = sound.playing();
@@ -24,7 +24,7 @@ const MusicControl = () => {
 
     return (
         <button onClick={toggle_music} className="fixed right-3 bottom-3 cursor-pointer w-10 h-10 flex justify-center items-center rounded-full dark:bg-gray-100 dark:text-emerald-700 bg-emerald-600 text-gray-100 shadow-2xl">
-            {sound.playing() ? <Pause/> : <Play/>}
+            {is_playing ? <Pause/> : <Play/>}
         </button>
     )
 }
