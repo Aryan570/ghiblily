@@ -12,13 +12,13 @@ interface RotatingCircleProps {
   borderColor?: string;
   borderWidth?: number;
   imageURLs: string[];
-  spinDuration?: number; 
+  spinDuration?: number;
 }
 
 export default function RotatingCircle({
   size = 400,
-//   borderColor = "#fffce1",
-//   borderWidth = 2,
+  //   borderColor = "#fffce1",
+  //   borderWidth = 2,
   imageURLs,
   spinDuration = 50,
 }: RotatingCircleProps) {
@@ -87,16 +87,21 @@ export default function RotatingCircle({
   }, [imageURLs, size, spinDuration]);
 
   return (
-    <div className="flex items-center justify-center w-full min-w-[400px] h-screen">
-      <div
-        ref={circleRef}
-        className="relative rounded-full border-1 border-dashed"
-        style={{
-          width: size,
-          height: size,
-        //   border: `${borderWidth}px solid ${borderColor}`,
-        }}
-      />
+    <div className="flex justify-center items-center">
+      <div className="max-w-6xl  container">
+        <h1 className="decoration-wavy underline decoration-1 underline-offset-2 text-3xl font-bold">skills</h1>
+        <div className="flex flex-col items-center justify-center w-full min-w-[400px] h-screen">
+          <div
+            ref={circleRef}
+            className="relative rounded-full border-1 border-dashed"
+            style={{
+              width: size,
+              height: size,
+              //   border: `${borderWidth}px solid ${borderColor}`,
+            }}
+          />
+        </div>
+      </div>
     </div>
   );
 }

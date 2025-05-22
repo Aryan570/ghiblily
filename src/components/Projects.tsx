@@ -38,7 +38,7 @@ const Projects = () => {
     return () => ctx.revert()
   }, [])
   return (
-    <div className='flex w-[300dvh] h-screen' ref={horizontalSection}>
+    <div className='flex h-screen' ref={horizontalSection}>
       <div className='relative flex justify-center items-center horizontal-panel'>
         <div className="absolute inset-0 flex items-center justify-center p-6">
           <div className="max-w-6xl w-full flex flex-col md:flex-row items-center justify-center gap-8 md:gap-44">
