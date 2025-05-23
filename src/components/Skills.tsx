@@ -1,6 +1,79 @@
 import Image from 'next/image'
 import React from 'react'
+import TagSkill from '@/components/TagSkill'
 
+const WebSkills = [
+    {
+        skill: "HTML",
+        url: "/html.svg"
+    },
+    {
+        skill: "CSS",
+        url: "/css.svg"
+    },
+    {
+        skill: "JavaScript",
+        url: "/js.svg"
+    },
+    {
+        skill: "TypeScript",
+        url: "/typescript-icon.svg"
+    },
+    {
+        skill: "React",
+        url: "/react.svg"
+    },
+    {
+        skill: "Next.js",
+        url: "/nextjs-icon.svg"
+    },
+    {
+        skill: "TailwindCSS",
+        url: "/tailwind.svg"
+    }
+]
+
+const CoreSkills = [
+    {
+        skill: "Rust",
+        url: "/rust.svg"
+    },
+    {
+        skill: "C++",
+        url: "/c-plusplus.svg"
+    },
+    {
+        skill: "NodeJS",
+        url: "/node.svg"
+    },
+    {
+        skill: "SQL",
+        url: "/sql.svg"
+    }
+]
+
+const OtherSkills = [
+    {
+        skill: "MongoDB",
+        url: "/mongo.svg"
+    },
+    {
+        skill : "PostgreSQL",
+        url : "/postgresql.svg"
+    },
+    {
+        skill : "Git",
+        url : "/git_r.svg"
+    },
+    {
+        skill : "NeoVim",
+        url : "/Neovim-mark.svg"
+    },
+    {
+        skill : "Davinci Resolve",
+        url : "/resolve.svg"
+    },
+]
 export default function Skills() {
     return (
         <div className='w-screen flex flex-col items-center'>
@@ -13,11 +86,15 @@ export default function Skills() {
                             <div className='w-full flex justify-center items-center bg-pink-400'>
                                 <div className='flex gap-2'>
                                     <Image src='/vercel.svg' height={10} width={10} alt='vercellogo' />
-                                    <p className='decoration-wavy underline decoration-1 underline-offset-2 text-2xl'>Core</p>
+                                    <p className='decoration-wavy underline decoration-1 underline-offset-2 text-2xl font-bold'>Core</p>
                                 </div>
                             </div>
                             <div className='p-2 text-lg w-full'>
-                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet, rerum quasi quo illum sed accusamus accusantium eum omnis odio quia debitis modi maxime ullam consequuntur doloremque dicta? Debitis ab aut iste voluptates!
+                                <div className="flex flex-wrap gap-2">
+                                    {CoreSkills.map((s) => (
+                                        <TagSkill key={s.skill} skill={s.skill} url={s.url} />
+                                    ))}
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -27,11 +104,15 @@ export default function Skills() {
                             <div className='w-full flex justify-center items-center bg-pink-400'>
                                 <div className='flex gap-2'>
                                     <Image src='/vercel.svg' height={10} width={10} alt='vercellogo' />
-                                    <p className='decoration-wavy underline decoration-1 underline-offset-2 text-2xl'>Web</p>
+                                    <p className='decoration-wavy underline decoration-1 underline-offset-2 text-2xl font-bold'>Web</p>
                                 </div>
                             </div>
                             <div className='p-2 text-lg w-full'>
-                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet, rerum quasi quo illum sed accusamus accusantium eum omnis odio quia debitis modi maxime ullam consequuntur doloremque dicta? Debitis ab aut iste voluptates!
+                                <div className="flex flex-wrap gap-2">
+                                    {WebSkills.map((s) => (
+                                        <TagSkill key={s.skill} skill={s.skill} url={s.url} />
+                                    ))}
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -41,11 +122,15 @@ export default function Skills() {
                             <div className='w-full flex justify-center items-center bg-pink-400'>
                                 <div className='flex gap-2'>
                                     <Image src='/vercel.svg' height={10} width={10} alt='vercellogo' />
-                                    <p className='decoration-wavy underline decoration-1 underline-offset-2 text-2xl'>Others</p>
+                                    <p className='decoration-wavy underline decoration-1 underline-offset-2 text-2xl font-bold'>Others</p>
                                 </div>
                             </div>
                             <div className='p-2 text-lg w-full'>
-                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet, rerum quasi quo illum sed accusamus accusantium eum omnis odio quia debitis modi maxime ullam consequuntur doloremque dicta? Debitis ab aut iste voluptates!
+                                <div className="flex flex-wrap gap-2">
+                                    {OtherSkills.map((s) => (
+                                        <TagSkill key={s.skill} skill={s.skill} url={s.url} />
+                                    ))}
+                                </div>
                             </div>
                         </div>
                     </div>
