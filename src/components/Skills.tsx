@@ -30,6 +30,10 @@ const WebSkills = [
     {
         skill: "TailwindCSS",
         url: "/tailwind.svg"
+    },
+    {
+        skill : "shadcn",
+        url : "/shad.svg"
     }
 ]
 
@@ -41,6 +45,10 @@ const CoreSkills = [
     {
         skill: "C++",
         url: "/c-plusplus.svg"
+    },
+    {
+        skill : "Data Structures & Algorithms",
+        url : "/leetcode.svg"
     },
     {
         skill: "NodeJS",
@@ -84,8 +92,8 @@ export default function Skills() {
                         <div className="absolute -top-3 left-1/2 -translate-x-1/2 w-16 h-5 bg-emerald-600/80 rotate-6"></div>
                         <div className='flex flex-col rounded-2xl overflow-hidden bg-blue-500 border-4 border-white shadow-2xl shadow-emerald-400'>
                             <div className='w-full flex justify-center items-center bg-pink-400'>
-                                <div className='flex gap-2'>
-                                    <Image src='/vercel.svg' height={10} width={10} alt='vercellogo' />
+                                <div className='flex gap-2 justify-center items-center'>
+                                    <Image src='/setting.svg' height={10} width={30} alt='core' />
                                     <p className='decoration-wavy underline decoration-1 underline-offset-2 text-2xl font-bold'>Core</p>
                                 </div>
                             </div>
@@ -102,9 +110,9 @@ export default function Skills() {
                         <div className="absolute -top-3 left-1/2 -translate-x-1/2 w-16 h-5 bg-emerald-600/80 -rotate-4"></div>
                         <div className='flex flex-col rounded-2xl overflow-hidden bg-blue-500 border-4 border-white shadow-2xl shadow-emerald-400'>
                             <div className='w-full flex justify-center items-center bg-pink-400'>
-                                <div className='flex gap-2'>
-                                    <Image src='/vercel.svg' height={10} width={10} alt='vercellogo' />
-                                    <p className='decoration-wavy underline decoration-1 underline-offset-2 text-2xl font-bold'>Web</p>
+                                <div className='flex gap-2 justify-center items-center'>
+                                    <Image className='-m-2' src='/web.svg' height={10} width={50} alt='web' />
+                                    <p className='decoration-wavy underline decoration-1 underline-offset-2 text-2xl font-bold'>Web Development</p>
                                 </div>
                             </div>
                             <div className='p-2 text-lg w-full'>
@@ -120,8 +128,8 @@ export default function Skills() {
                         <div className="absolute -top-3 left-1/2 -translate-x-1/2 w-16 h-5 bg-emerald-600/80 rotate-6"></div>
                         <div className='flex flex-col rounded-2xl overflow-hidden bg-blue-500 border-4 border-white shadow-2xl shadow-emerald-400'>
                             <div className='w-full flex justify-center items-center bg-pink-400'>
-                                <div className='flex gap-2'>
-                                    <Image src='/vercel.svg' height={10} width={10} alt='vercellogo' />
+                                <div className='flex gap-2 justify-center items-center'>
+                                    <Image src='/tools.svg' height={10} width={25} alt='others' />
                                     <p className='decoration-wavy underline decoration-1 underline-offset-2 text-2xl font-bold'>Others</p>
                                 </div>
                             </div>
