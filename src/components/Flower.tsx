@@ -5,13 +5,7 @@ import { useState, useRef, useEffect, useLayoutEffect } from "react"
 import { gsap } from "gsap"
 import { DrawSVGPlugin } from "gsap/dist/DrawSVGPlugin"
 import styles from "@/components/plant-animation.module.css"
-
-// Register GSAP plugins
-if (typeof window !== "undefined") {
-  gsap.registerPlugin(DrawSVGPlugin)
-}
-
-// Types
+gsap.registerPlugin(DrawSVGPlugin);
 interface SceneProps {
   className?: string
 }
@@ -35,7 +29,6 @@ interface LeafProps {
   parentTimeline: gsap.core.Timeline
 }
 
-// Settings and utilities
 const getSettings = () => {
   if (typeof window === "undefined") {
     return {
@@ -45,8 +38,8 @@ const getSettings = () => {
         stroke: "#2d3436",
       },
       animation: {
-        height: 800, // Default height for SSR
-        width: 1200, // Default width for SSR
+        height: 800,
+        width: 1200,
         maxPlantCount: 5,
         minPlantCount: 1,
       },
@@ -98,15 +91,12 @@ const utils = {
   },
 }
 
-// Leaf Component
 const Leaf: React.FC<LeafProps> = ({ id, x, y, size, side, delay, parentTimeline }) => {
   const settings = getSettings()
   const leafRef = useRef<SVGGElement>(null)
   const stemRef = useRef<SVGPathElement>(null)
   const substemsLeftRef = useRef<Array<SVGPathElement | null>>([])
   const substemsRightRef = useRef<Array<SVGPathElement | null>>([])
-
-  // Leaf properties
   const hasSolidFill = Math.random() > 0.75
   const hasMainStem = !hasSolidFill && Math.random() > 0.3
   const hasLeftSide = hasMainStem && Math.random() > 0.65
@@ -115,15 +105,12 @@ const Leaf: React.FC<LeafProps> = ({ id, x, y, size, side, delay, parentTimeline
 
   const substemSpacing = 4 * settings.plant.strokeWidth
   const substemCount = Math.floor(size / substemSpacing / settings.plant.strokeWidth)
-
-  // Get leaf path
   const getLeafPath = () => {
     const middle = size / 2
     const width = size / 3
     return `M ${x} ${y} Q ${x - width} ${y - middle} ${x} ${y - size} Q ${x + width} ${y - middle} ${x} ${y} Z`
   }
 
-  // Animation effect
   useEffect(() => {
     if (!settings.isAnimationOk || !leafRef.current) return
 
@@ -189,8 +176,6 @@ const Leaf: React.FC<LeafProps> = ({ id, x, y, size, side, delay, parentTimeline
     }
 
     parentTimeline.add(timeline, "<")
-
-    // Cleanup
     return () => {
       timeline.kill()
     }
@@ -246,24 +231,17 @@ const Leaf: React.FC<LeafProps> = ({ id, x, y, size, side, delay, parentTimeline
   )
 }
 
-// Plant Component
 const Plant: React.FC<PlantProps> = ({ id, x, y, parentTimeline, maxHeight, minHeight }) => {
-  const settings = getSettings()
-  const stemRef = useRef<SVGPathElement>(null)
-
-  // Plant properties
+  const settings = getSettings();
+  const stemRef = useRef<SVGPathElement>(null);
   const height = utils.getRandFromRange(minHeight, maxHeight)
   const nodes = utils.getRandFromRange(settings.plant.minNodes, settings.plant.maxNodes)
   const stemDuration = height * settings.durations.stem
   const plantDelay = Math.random() * 2
   const step = height / nodes
-
-  // Animation effect
   useEffect(() => {
-    if (!settings.isAnimationOk || !stemRef.current || !parentTimeline) return
-
-    const timeline = gsap.timeline()
-
+    if (!settings.isAnimationOk || !stemRef.current || !parentTimeline) return;
+    const timeline = gsap.timeline();
     timeline.fromTo(
       stemRef.current,
       {
@@ -271,15 +249,13 @@ const Plant: React.FC<PlantProps> = ({ id, x, y, parentTimeline, maxHeight, minH
       },
       {
         duration: stemDuration,
-        ease: "linear", 
+        ease: "linear",
         drawSVG: "0% 100%",
       },
       `<+${plantDelay}`,
     )
 
     parentTimeline.add(timeline, "<")
-
-    // Cleanup
     return () => {
       timeline.kill()
     }
@@ -321,26 +297,19 @@ const Plant: React.FC<PlantProps> = ({ id, x, y, parentTimeline, maxHeight, minH
   )
 }
 
-// Main Scene Component
 const PlantAnimation: React.FC<SceneProps> = ({ className }) => {
-  // const [key, setKey] = useState<number>(Math.random())
   const settings = getSettings()
   const timelineRef = useRef<gsap.core.Timeline | null>(null)
   const [isReady, setIsReady] = useState(false)
-
-  // Scene properties
   const height = settings.animation.height
   const width = settings.animation.width
   const plantCount = utils.getRandFromRange(settings.animation.minPlantCount, settings.animation.maxPlantCount)
   const margin = (height * settings.plant.maxHeight) / settings.plant.maxNodes
   const plantSection = (width - 2 * margin) / plantCount
 
-  // Create timeline in effect to handle cleanup
   useLayoutEffect(() => {
     timelineRef.current = gsap.timeline()
     setIsReady(true)
-    
-    // Cleanup function
     return () => {
       if (timelineRef.current) {
         timelineRef.current.kill()
@@ -350,21 +319,13 @@ const PlantAnimation: React.FC<SceneProps> = ({ className }) => {
     }
   }, [])
 
-  // Update function with proper cleanup
-  // const update = () => {
-  //   setIsReady(false)
-  //   if (timelineRef.current) {
-  //     timelineRef.current.kill()
-  //     timelineRef.current = null
-  //   }
-  //   setKey(Math.random())
-  // }
-
   return (
     <div className={`${styles.animation} ${className || ""}`}>
+      <div className="absolute top-1/3 left-1/2 transform -translate-x-1/2">
+        <h1 className="text-7xl font-bold decoration-wavy underline decoration-1 underline-offset-2">Ghiblily</h1>
+      </div>
       <svg
         className={styles.scene}
-        // key={key}
         stroke={settings.colors.stroke}
         strokeWidth={settings.plant.strokeWidth}
         strokeLinecap="round"
@@ -386,10 +347,6 @@ const PlantAnimation: React.FC<SceneProps> = ({ className }) => {
           />
         ))}
       </svg>
-
-      {/* <button className={styles.btn} onClick={update} type="button">
-        again
-      </button> */}
     </div>
   )
 }
