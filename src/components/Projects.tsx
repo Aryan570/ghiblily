@@ -12,7 +12,15 @@ import poppy from '@/../public/karigurashi001.jpg'
 import rust from '@/../public/rust2.jpg'
 import Link from 'next/link'
 
-gsap.registerPlugin(ScrollTrigger);
+if (typeof window !== "undefined") {
+  gsap.registerPlugin(ScrollTrigger);
+  if (ScrollTrigger.isTouch === 1) {
+    ScrollTrigger.normalizeScroll(true);
+  } else {
+    ScrollTrigger.normalizeScroll(false);
+  }
+
+}
 
 const Projects = () => {
   const horizontalSection = React.useRef<HTMLDivElement>(null)
@@ -32,6 +40,8 @@ const Projects = () => {
           invalidateOnRefresh: true,
           snap: 1 / (slides.length - 1),
           anticipatePin: 1,
+          fastScrollEnd: true,
+          preventOverlaps: true,
         },
       })
     }, horizontalSection)

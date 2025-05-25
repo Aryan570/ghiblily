@@ -5,7 +5,7 @@ import { ArrowBigRight } from 'lucide-react'
 
 const Banner = ({ tog_ban }: { tog_ban: () => void }) => {
   return (
-    <div className='h-screen w-full overflow-hidden pompiere-font'>
+    <div className='h-dvh w-full overflow-hidden pompiere-font'>
       <div className='absolute flex flex-col-reverse lg:flex-row w-full h-full justify-around items-center'>
         <div className='mx-2'>
           <h1 className='text-5xl font-bold text-center hero_portfolio rounded-xl mb-2 p-2 -rotate-2'>Welcome to my <span className='decoration-wavy underline decoration-1 underline-offset-2'>Ghiblily</span></h1>
