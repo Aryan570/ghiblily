@@ -23,7 +23,7 @@ const MusicControl = () => {
     }
 
     return (
-        <button onClick={toggle_music} className="fixed right-3 bottom-3 cursor-pointer w-10 h-10 flex justify-center items-center rounded-full dark:bg-gray-100 dark:text-emerald-700 bg-emerald-600 text-gray-100 shadow-2xl">
+        <button onClick={toggle_music} className="fixed z-50 right-3 bottom-3 cursor-pointer w-10 h-10 flex justify-center items-center rounded-full dark:bg-gray-100 dark:text-emerald-700 bg-emerald-600 text-gray-100 shadow-2xl">
             {is_playing ? <Pause/> : <Play/>}
         </button>
     )
