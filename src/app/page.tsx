@@ -1,8 +1,10 @@
-import Main from "@/components/Main";
-export default function Home() {
+import Main from '@/components/Main';
+import Folio from '@/components/Folio';
+
+export default function HomePage() {
   return (
-    <div className="h-screen w-screen">
-      <Main />
-    </div>
+    <Main
+      folioComponent={<Folio />} // Folio is rendered on the server, its HTML is passed
+    />
   );
 }
