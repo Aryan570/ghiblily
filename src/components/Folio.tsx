@@ -6,16 +6,19 @@ import PlantAnimation from '@/components/Flower'
 import Skills from '@/components/Skills'
 import Intro from '@/components/CastleIntro'
 import BlogPort from '@/components/Blogs3'
+import Arc, { Arc2 } from '@/components/Arc'
 
 const Folio = () => {
   return (
     <div className=' min-h-screen hero_portfolio pompiere-font overflow-hidden'>
       <PlantAnimation />
+      <Arc/>
       <Intro />
       {/* <Suspense fallback={<div>fetching the blogs...</div>}> */}
         <BlogPort />
       {/* </Suspense> */}
-      <div className='w-full flex justify-center items-center mt-16'><hr className="h-px max-w-6xl w-full mx-2 my-8 bg-[#ededed] border-0" /></div>
+      <Arc2/>
+      {/* <div className='w-full flex justify-center items-center mt-16'><hr className="h-px max-w-6xl w-full mx-2 my-8 bg-[#ededed] border-0" /></div> */}
       <Skills />
       <div className='w-full flex justify-center items-center md:mt-16 mt-12'><hr className="h-px max-w-6xl w-full mx-2 my-8 bg-[#ededed] border-0" /></div>
       <Projects />
