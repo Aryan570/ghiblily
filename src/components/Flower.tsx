@@ -5,6 +5,8 @@ import { useState, useRef, useEffect, useLayoutEffect } from "react"
 import { gsap } from "gsap"
 import { DrawSVGPlugin } from "gsap/dist/DrawSVGPlugin"
 import styles from "@/components/plant-animation.module.css"
+import Link from "next/link"
+import { MoveRight } from "lucide-react"
 gsap.registerPlugin(DrawSVGPlugin);
 interface SceneProps {
   className?: string
@@ -320,9 +322,25 @@ const PlantAnimation: React.FC<SceneProps> = ({ className }) => {
   }, [])
 
   return (
-    <div className={`${styles.animation} ${className || ""}`}>
-      <div className="absolute top-1/3 left-1/2 transform -translate-x-1/2">
-        <h1 className="text-7xl font-bold decoration-wavy underline decoration-1 underline-offset-2">Ghiblily</h1>
+    <div className={`border-b-2 border-teal-800 relative ${styles.animation} ${className || ""}`}>
+      <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2
+                  w-full max-w-lg md:max-w-2xl lg:max-w-3xl xl:max-w-4xl
+                  text-center z-10 backdrop-blur-sm rounded-xl drop-shadow-2xl p-4 md:p-8 bg-white bg-opacity-80">
+        <h1 className="text-4xl md:text-7xl font-extrabold text-wrap mt-6 mb-4 text-teal-800">
+          Lorem ipsum dolor sit.
+        </h1>
+        <p className="text-lg md:text-2xl opacity-80 mb-6 text-gray-700">
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cum dicta fuga molestiae laudantium laboriosam provident! Ipsam, dolor. Reiciendis omnis modi consequatur?
+        </p>
+        <div className="flex flex-col md:flex-row justify-center items-center gap-4 mb-6">
+          <Link target="_blank" href={'https://drive.google.com/file/d/138DVEnUUftR1MxWezEnK0YDFnm95dz0-/view?usp=sharing'} className="px-8 py-3 bg-teal-700 text-white font-semibold rounded-lg hover:bg-teal-800 transition-colors shadow-md">
+            Resume
+          </Link>
+          <Link href={'/blogs'} className="px-8 py-3 border-2 border-emerald-900 rounded-lg text-emerald-900 font-semibold hover:text-white hover:border-emerald-700 hover:bg-emerald-700 transition-colors flex items-center justify-center shadow-md">
+            <p>Blogs</p>
+            <MoveRight />
+          </Link>
+        </div>
       </div>
       <svg
         className={styles.scene}
