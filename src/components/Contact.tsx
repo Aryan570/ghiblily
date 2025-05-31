@@ -44,11 +44,11 @@ const Contact = () => {
                     </p>
                     <form method='POST' onSubmit={handle_submit} className='flex flex-col space-y-4'>
                         <label htmlFor='name' className=''>Name</label>
-                        <input className='w-full focus:outline-none border-2 px-2 py-2 rounded-md dark:border-gray-300 border-gray-500' type='text' name='name' minLength={3} required />
+                        <input className='w-full focus:outline-none border-2 px-2 py-2 rounded-md dark:border-gray-300 border-gray-500 bg-emerald-600/60' type='text' name='name' minLength={3} required />
                         <label htmlFor='email' className=''>Email</label>
-                        <input className='w-full focus:outline-none border-2 px-2 py-2 rounded-md dark:border-gray-300 border-gray-500' type='email' name='email' required />
+                        <input className='w-full focus:outline-none border-2 px-2 py-2 rounded-md dark:border-gray-300 border-gray-500 bg-emerald-600/60' type='email' name='email' required />
                         <label htmlFor='message' className=''>Message</label>
-                        <textarea className='resize-none w-full focus:outline-none border-2 px-2 py-2 rounded-md dark:border-gray-300 border-gray-500' name='message' rows={4} minLength={5} maxLength={2000} required />
+                        <textarea className='resize-none w-full focus:outline-none border-2 px-2 py-2 rounded-md dark:border-gray-300 border-gray-500 bg-emerald-600/60' name='message' rows={4} minLength={5} maxLength={2000} required />
                         <p className=''>{err}</p>
                         <button className='cursor-pointer float-left w-fit dark:bg-gray-100 dark:text-emerald-700 bg-emerald-600 text-gray-100 rounded-md px-2 py-2' type='submit'>Submit</button>
                     </form>

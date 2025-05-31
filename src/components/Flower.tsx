@@ -6,8 +6,9 @@ import { gsap } from "gsap"
 import { DrawSVGPlugin } from "gsap/dist/DrawSVGPlugin"
 import styles from "@/components/plant-animation.module.css"
 import Link from "next/link"
-import { MoveRight } from "lucide-react"
-gsap.registerPlugin(DrawSVGPlugin);
+import { MoveRight, Download, BookOpen, Sparkles, ArrowDown } from "lucide-react"
+gsap.registerPlugin(DrawSVGPlugin)
+
 interface SceneProps {
   className?: string
 }
@@ -192,7 +193,11 @@ const Leaf: React.FC<LeafProps> = ({ id, x, y, size, side, delay, parentTimeline
           <path d={leafPath} />
         </clipPath>
       </defs>
-      <path className=" outline-none" d={leafPath} fill={hasSolidFill ? settings.colors.stroke : settings.colors.fill} />
+      <path
+        className=" outline-none"
+        d={leafPath}
+        fill={hasSolidFill ? settings.colors.stroke : settings.colors.fill}
+      />
 
       {hasMainStem && <path className="leaf-stem" d={`M ${x} ${y} L ${x} ${y - size}`} ref={stemRef} />}
 
@@ -205,7 +210,9 @@ const Leaf: React.FC<LeafProps> = ({ id, x, y, size, side, delay, parentTimeline
             return (
               <path
                 key={`${id}-substem-left-${i}`}
-                ref={(el) => { substemsLeftRef.current[i] = el; }}
+                ref={(el) => {
+                  substemsLeftRef.current[i] = el
+                }}
                 d={`M ${x} ${yStart} L ${x + (size / 6) * -1} ${yEnd}`}
               />
             )
@@ -222,7 +229,9 @@ const Leaf: React.FC<LeafProps> = ({ id, x, y, size, side, delay, parentTimeline
             return (
               <path
                 key={`${id}-substem-right-${i}`}
-                ref={(el) => { substemsRightRef.current[i] = el; }}
+                ref={(el) => {
+                  substemsRightRef.current[i] = el
+                }}
                 d={`M ${x} ${yStart} L ${x + (size / 6) * 1} ${yEnd}`}
               />
             )
@@ -234,16 +243,16 @@ const Leaf: React.FC<LeafProps> = ({ id, x, y, size, side, delay, parentTimeline
 }
 
 const Plant: React.FC<PlantProps> = ({ id, x, y, parentTimeline, maxHeight, minHeight }) => {
-  const settings = getSettings();
-  const stemRef = useRef<SVGPathElement>(null);
+  const settings = getSettings()
+  const stemRef = useRef<SVGPathElement>(null)
   const height = utils.getRandFromRange(minHeight, maxHeight)
   const nodes = utils.getRandFromRange(settings.plant.minNodes, settings.plant.maxNodes)
   const stemDuration = height * settings.durations.stem
   const plantDelay = Math.random() * 2
   const step = height / nodes
   useEffect(() => {
-    if (!settings.isAnimationOk || !stemRef.current || !parentTimeline) return;
-    const timeline = gsap.timeline();
+    if (!settings.isAnimationOk || !stemRef.current || !parentTimeline) return
+    const timeline = gsap.timeline()
     timeline.fromTo(
       stemRef.current,
       {
@@ -323,25 +332,94 @@ const PlantAnimation: React.FC<SceneProps> = ({ className }) => {
 
   return (
     <div className={`border-b-2 border-teal-800 relative ${styles.animation} ${className || ""}`}>
-      <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2
-                  w-full max-w-lg md:max-w-2xl lg:max-w-3xl xl:max-w-4xl
-                  text-center z-10 backdrop-blur-sm rounded-xl drop-shadow-2xl p-4 md:p-8 bg-white bg-opacity-80">
-        <h1 className="text-4xl md:text-7xl font-extrabold text-wrap mt-6 mb-4 text-teal-800">
-          Lorem ipsum dolor sit.
-        </h1>
-        <p className="text-lg md:text-2xl opacity-80 mb-6 text-gray-700">
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cum dicta fuga molestiae laudantium laboriosam provident! Ipsam, dolor. Reiciendis omnis modi consequatur?
-        </p>
-        <div className="flex flex-col md:flex-row justify-center items-center gap-4 mb-6">
-          <Link target="_blank" href={'https://drive.google.com/file/d/138DVEnUUftR1MxWezEnK0YDFnm95dz0-/view?usp=sharing'} className="px-8 py-3 bg-teal-700 text-white font-semibold rounded-lg hover:bg-teal-800 transition-colors shadow-md">
-            Resume
-          </Link>
-          <Link href={'/blogs'} className="px-8 py-3 border-2 border-emerald-900 rounded-lg text-emerald-900 font-semibold hover:text-white hover:border-emerald-700 hover:bg-emerald-700 transition-colors flex items-center justify-center shadow-md">
-            <p>Blogs</p>
-            <MoveRight />
-          </Link>
+      {/* Top Navigation Bar */}
+      <div className="absolute top-0 left-0 right-0 z-20 p-4 md:p-6">
+        <div className="flex justify-between items-center">
+          {/* Logo/Brand */}
+          <div className="flex items-center gap-3">
+            <div className="w-10 h-10 bg-gradient-to-br from-emerald-500 to-teal-600 rounded-xl flex items-center justify-center shadow-lg">
+              <Sparkles className="w-6 h-6 text-white" />
+            </div>
+            <div className="hidden sm:block">
+              <h2 className="text-xl font-bold text-white drop-shadow-lg">Digital Garden</h2>
+              <p className="text-sm text-emerald-100 drop-shadow">Growing Ideas</p>
+            </div>
+          </div>
+
+          {/* Action Buttons */}
+          <div className="flex items-center gap-3">
+            <Link
+              target="_blank"
+              href={"https://drive.google.com/file/d/138DVEnUUftR1MxWezEnK0YDFnm95dz0-/view?usp=sharing"}
+              className="group px-4 py-2 md:px-6 md:py-3 bg-white/20 backdrop-blur-md border border-white/30 rounded-xl text-white font-semibold hover:bg-white/30 transition-all duration-300 shadow-lg hover:shadow-xl flex items-center gap-2"
+            >
+              <Download className="w-4 h-4 group-hover:animate-bounce" />
+              <span className="hidden sm:inline">Resume</span>
+            </Link>
+            <Link
+              href={"/blogs"}
+              className="group px-4 py-2 md:px-6 md:py-3 bg-gradient-to-r from-emerald-500 to-teal-600 text-white font-semibold rounded-xl hover:from-emerald-600 hover:to-teal-700 transition-all duration-300 shadow-lg hover:shadow-xl flex items-center gap-2"
+            >
+              <BookOpen className="w-4 h-4 group-hover:animate-pulse" />
+              <span className="hidden sm:inline">Blogs</span>
+              <MoveRight className="w-4 h-4 group-hover:translate-x-1 transition-transform duration-300" />
+            </Link>
+          </div>
         </div>
       </div>
+
+      {/* Side Content Panel */}
+      <div className="absolute left-4 md:left-8 top-1/2 transform -translate-y-1/2 z-20 max-w-xs lg:max-w-sm">
+        <div className="bg-white/10 backdrop-blur-lg rounded-2xl p-6 border border-white/20 shadow-2xl">
+          {/* Main Content */}
+          <div className="mb-6">
+            <div className="inline-flex items-center gap-2 px-3 py-1 bg-emerald-500/20 rounded-full text-emerald-100 text-sm font-medium mb-4">
+              <div className="w-2 h-2 bg-emerald-400 rounded-full animate-pulse"></div>
+              Welcome
+            </div>
+            <h1 className="text-2xl md:text-3xl lg:text-4xl font-black text-white mb-4 leading-tight drop-shadow-lg">
+              Watch Ideas
+              <br />
+              <span className="text-emerald-300">Bloom & Grow</span>
+            </h1>
+            <p className="text-emerald-100/90 leading-relaxed text-sm md:text-base drop-shadow">
+              Where creativity meets code. Explore my digital garden of projects, thoughts, and innovations.
+            </p>
+          </div>
+
+          {/* Stats or Features */}
+          <div className="grid grid-cols-2 gap-3 mb-6">
+            <div className="bg-white/10 rounded-xl p-3 text-center">
+              <div className="text-lg font-bold text-white">50+</div>
+              <div className="text-xs text-emerald-200">Projects</div>
+            </div>
+            <div className="bg-white/10 rounded-xl p-3 text-center">
+              <div className="text-lg font-bold text-white">3+</div>
+              <div className="text-xs text-emerald-200">Years</div>
+            </div>
+          </div>
+
+          {/* Call to Action */}
+          <div className="text-center">
+            <p className="text-xs text-emerald-200/80 mb-2">Scroll to explore more</p>
+            <ArrowDown className="w-5 h-5 text-emerald-300 mx-auto animate-bounce" />
+          </div>
+        </div>
+      </div>
+
+      {/* Bottom Floating Info */}
+      <div className="absolute bottom-6 right-6 z-20 hidden lg:block">
+        <div className="bg-white/10 backdrop-blur-lg rounded-2xl p-4 border border-white/20 shadow-xl max-w-xs">
+          <div className="flex items-center gap-3">
+            <div className="w-3 h-3 bg-green-400 rounded-full animate-pulse"></div>
+            <div>
+              <p className="text-white font-medium text-sm">Plants Growing</p>
+              <p className="text-emerald-200 text-xs">Watch the magic happen</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
       <svg
         className={styles.scene}
         stroke={settings.colors.stroke}
@@ -353,17 +431,18 @@ const PlantAnimation: React.FC<SceneProps> = ({ className }) => {
       >
         <rect x={0} y={0} height={height} width={width} fill={settings.colors.background} stroke="none" />
 
-        {isReady && [...Array(plantCount)].map((_, i) => (
-          <Plant
-            key={`plant-${i}-${i}`}
-            id={i}
-            x={margin + (i + 0.5) * plantSection}
-            y={height}
-            parentTimeline={timelineRef.current!}
-            maxHeight={height * settings.plant.maxHeight}
-            minHeight={height * settings.plant.minHeight}
-          />
-        ))}
+        {isReady &&
+          [...Array(plantCount)].map((_, i) => (
+            <Plant
+              key={`plant-${i}-${i}`}
+              id={i}
+              x={margin + (i + 0.5) * plantSection}
+              y={height}
+              parentTimeline={timelineRef.current!}
+              maxHeight={height * settings.plant.maxHeight}
+              minHeight={height * settings.plant.minHeight}
+            />
+          ))}
       </svg>
     </div>
   )

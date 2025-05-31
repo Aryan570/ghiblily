@@ -2,6 +2,7 @@
   height: 100vh;
   /* background: #9ab3f5; */
   background: #9ab3f5;
+  overflow: hidden;
   /* position: relative; */
 }
 
@@ -28,4 +29,35 @@
   text-decoration: underline;
   border: none;
   outline: none;
+}
+
+.stem {
+  stroke-linecap: round;
+}
+
+.leaf-stem {
+  stroke-linecap: round;
+}
+
+.petalStems path {
+  stroke-linecap: round;
+}
+
+/* Add some subtle animations for the floating elements */
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+.animation .absolute:nth-child(3) {
+  animation: float 6s ease-in-out infinite;
+}
+
+.animation .absolute:nth-child(4) {
+  animation: float 8s ease-in-out infinite reverse;
 }
