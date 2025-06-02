@@ -174,7 +174,7 @@ export default function Skills() {
     }
 
     return (
-        <div className="min-h-screen  relative overflow-hidden quicksand">
+        <div className="min-h-screen  relative overflow-hidden quicksand bg-gray-900 -my-[0.5px]">
             {/* Animated Background */}
             <div className="absolute inset-0">
                 {[...Array(50)].map((_, i) => (
@@ -209,7 +209,7 @@ export default function Skills() {
             </div>
 
             {/* Main Universe Container */}
-            <div className="relative w-full h-full bg-radial from-10% from-gray-800/80 via-70% via-transparent to-transparent">
+            <div className="relative w-full h-full ">
                 <div ref={containerRef} className="relative w-full h-[70vh] mx-auto max-w-6xl ">
                     {/* Connection Lines */}
                     {skillNodes.map((node) =>

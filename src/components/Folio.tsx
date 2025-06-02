@@ -14,17 +14,19 @@ const Folio = () => {
       <PlantAnimation />
       <Intro />
       {/* <Suspense fallback={<div>fetching the blogs...</div>}> */}
-        <BlogPort />
+      <BlogPort />
+
       {/* </Suspense> */}
-      <Arc2/>
-      {/* <div className='w-full flex justify-center items-center mt-16'><hr className="h-px max-w-6xl w-full mx-2 my-8 bg-[#ededed] border-0" /></div> */}
       <Skills />
+      <Arc2 />
+      {/* <div className='w-full flex justify-center items-center mt-16'><hr className="h-px max-w-6xl w-full mx-2 my-8 bg-[#ededed] border-0" /></div> */}
+
       <div className='w-full flex justify-center items-center md:mt-16 mt-12'></div>
       <Projects />
       {/* <div className='w-full flex justify-center items-center mt-16'><hr className="h-px max-w-6xl w-full mx-2 my-8 bg-[#ededed] border-0" /></div> */}
-      <Arc3/>
+      <Arc3 />
       <About />
-      <Arc2/>
+      <Arc2 />
       <Contact />
       <Footer />
     </div>
