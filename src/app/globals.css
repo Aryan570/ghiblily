@@ -112,6 +112,10 @@ html.lenis {
   font-family: var(--font-pompiere);
 }
 
+.quicksand {
+  font-family: var(--font-quicksand);
+}
+
 .scrollbar-hide::-webkit-scrollbar {
   display: none;
 }

@@ -1,155 +1,272 @@
-import Image from 'next/image'
-import React from 'react'
-import TagSkill from '@/components/TagSkill'
+/* eslint-disable @typescript-eslint/no-explicit-any */
+"use client"
 
-const WebSkills = [
+import { useState, useEffect, useRef } from "react"
+import { Zap, Code, Terminal, Globe } from "lucide-react"
+
+const skillNodes = [
+    // Core Programming
+    { id: "rust", name: "Rust", x: 20, y: 30, category: "core", icon: "🦀", connections: ["cpp", "algorithms"] },
+    { id: "cpp", name: "C++", x: 35, y: 30, category: "core", icon: "⚡", connections: [ "nodejs"] },
+    { id: "algorithms", name: "Algorithms", x: 50, y: 20, category: "core", icon: "🧠", connections: ["sql", "cpp"] },
+    { id: "nodejs", name: "Node.js", x: 65, y: 35, category: "core", icon: "🟢", connections: ["sql", "react"] },
+    { id: "sql", name: "SQL", x: 80, y: 30, category: "core", icon: "🗄️", connections: ["mongodb"] },
+
+    // Web Development
+    { id: "react", name: "React", x: 15, y: 60, category: "web", icon: "⚛️", connections: ["nextjs", "typescript"] },
+    { id: "nextjs", name: "Next.js", x: 30, y: 55, category: "web", icon: "▲", connections: ["typescript", "tailwind"] },
     {
-        skill: "HTML",
-        url: "/html.svg"
+        id: "typescript",
+        name: "TypeScript",
+        x: 45,
+        y: 65,
+        category: "web",
+        icon: "📘",
+        connections: ["javascript", "tailwind"],
     },
     {
-        skill: "CSS",
-        url: "/css.svg"
+        id: "javascript",
+        name: "JavaScript",
+        x: 60,
+        y: 75,
+        category: "web",
+        icon: "💛",
+        connections: ["html", "tailwind"],
     },
-    {
-        skill: "JavaScript",
-        url: "/js.svg"
-    },
-    {
-        skill: "TypeScript",
-        url: "/typescript-icon.svg"
-    },
-    {
-        skill: "React",
-        url: "/react.svg"
-    },
-    {
-        skill: "Next.js",
-        url: "/nextjs-icon.svg"
-    },
-    {
-        skill: "TailwindCSS",
-        url: "/tailwind.svg"
-    },
-    {
-        skill: "shadcn",
-        url: "/shad.svg"
-    }
+    { id: "html", name: "HTML/CSS", x: 75, y: 60, category: "web", icon: "🌐", connections: ["tailwind"] },
+    { id: "tailwind", name: "Tailwind", x: 85, y: 75, category: "web", icon: "🎨", connections: [] },
+
+    // Tools & Database
+    { id: "mongodb", name: "MongoDB", x: 25, y: 90, category: "tools", icon: "🍃", connections: ["postgresql", "git"] },
+    { id: "postgresql", name: "PostgreSQL", x: 40, y: 95, category: "tools", icon: "🐘", connections: ["git"] },
+    { id: "git", name: "Git", x: 55, y: 85, category: "tools", icon: "🌿", connections: ["neovim"] },
+    { id: "neovim", name: "NeoVim", x: 70, y: 90, category: "tools", icon: "🌙", connections: ["davinci"] },
+    { id: "davinci", name: "DaVinci", x: 85, y: 85, category: "tools", icon: "🎬", connections: [] },
 ]
 
-const CoreSkills = [
-    {
-        skill: "Rust",
-        url: "/rust.svg"
-    },
-    {
-        skill: "C++",
-        url: "/c-plusplus.svg"
-    },
-    {
-        skill: "Data Structures & Algorithms",
-        url: "/leetcode.svg"
-    },
-    {
-        skill: "NodeJS",
-        url: "/node.svg"
-    },
-    {
-        skill: "SQL",
-        url: "/sql.svg"
-    }
-]
+const categories = {
+    core: { name: "Core", color: "#3B82F6", icon: Code },
+    web: { name: "Web", color: "#10B981", icon: Globe },
+    tools: { name: "Tools", color: "#8B5CF6", icon: Terminal },
+}
 
-const OtherSkills = [
-    {
-        skill: "MongoDB",
-        url: "/mongo.svg"
-    },
-    {
-        skill: "PostgreSQL",
-        url: "/postgresql.svg"
-    },
-    {
-        skill: "Git",
-        url: "/git_r.svg"
-    },
-    {
-        skill: "NeoVim",
-        url: "/Neovim-mark.svg"
-    },
-    {
-        skill: "Davinci Resolve",
-        url: "/resolve.svg"
-    },
-]
-export default function Skills() {
+const SkillNode = ({ node, isActive, onHover, onLeave }: any) => {
+    const [isVisible, setIsVisible] = useState(false)
+    const category = categories[node.category as keyof typeof categories]
+
+    useEffect(() => {
+        const timer = setTimeout(() => setIsVisible(true), Math.random() * 1000 + 500)
+        return () => clearTimeout(timer)
+    }, [])
+
     return (
-        <div className='flex flex-col items-center p-4 md:p-0'>
-            <h1 className='decoration-wavy underline decoration-1 underline-offset-2 text-3xl float-left max-w-6xl w-full font-bold'>skills</h1>
-            <div className='max-w-6xl flex justify-center items-center w-full mt-8 md:mb-32 mb-4'>
-                <div className='grid grid-cols-4 grid-rows-12 md:grid-cols-12 md:grid-rows-9 gap-y-12 md:gap-4 w-full relative'>
-                    <div className='row-start-1 col-start-1 md:col-start-5 row-span-4 col-span-4 relative'>
-                        <div className='absolute inset-0 transform rotate-2 hover:rotate-0 transition-transform duration-300 will-change-transform'>
-                            <div className="absolute -top-3 left-1/2 -translate-x-1/2 w-16 h-5 bg-emerald-600/80 rotate-6"></div>
-                            <div className='flex flex-col rounded-2xl overflow-hidden bg-blue-500/40 border-4 border-white shadow-2xl shadow-emerald-400'>
-                                <div className='w-full flex justify-center items-center bg-emerald-900/70 border-b-4'>
-                                    <div className='flex gap-2 justify-center items-center'>
-                                        <Image src='/setting.svg' height={10} width={30} alt='core' />
-                                        <p className='decoration-wavy underline decoration-1 underline-offset-2 text-2xl font-bold'>Core</p>
-                                    </div>
-                                </div>
-                                <div className='p-2 text-lg w-full'>
-                                    <div className="flex flex-wrap gap-2">
-                                        {CoreSkills.map((s) => (
-                                            <TagSkill key={s.skill} skill={s.skill} url={s.url} />
-                                        ))}
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div className='row-start-5 col-start-1 row-span-4 col-span-4 relative'>
-                        <div className='absolute inset-0 transform -rotate-2 hover:rotate-0 transition-transform duration-300 will-change-transform'>
-                            <div className="absolute -top-3 left-1/2 -translate-x-1/2 w-16 h-5 bg-emerald-600/80 -rotate-4"></div>
-                            <div className='flex flex-col rounded-2xl overflow-hidden bg-blue-500/40 border-4 border-white shadow-2xl shadow-emerald-400'>
-                                <div className='w-full flex justify-center items-center bg-emerald-900/70 border-b-4'>
-                                    <div className='flex gap-2 justify-center items-center'>
-                                        <Image className='-m-2' src='/web.svg' height={10} width={50} alt='web' />
-                                        <p className='decoration-wavy underline decoration-1 underline-offset-2 text-2xl font-bold'>Web Development</p>
-                                    </div>
-                                </div>
-                                <div className='p-2 text-lg w-full'>
-                                    <div className="flex flex-wrap gap-2">
-                                        {WebSkills.map((s) => (
-                                            <TagSkill key={s.skill} skill={s.skill} url={s.url} />
-                                        ))}
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div className='row-start-9 col-start-1 md:row-start-5 md:col-start-9 row-span-4 col-span-4 relative'>
-                        <div className='absolute inset-0 transform rotate-2 hover:rotate-0 transition-transform duration-300 will-change-transform'>
-                            <div className="absolute -top-3 left-1/2 -translate-x-1/2 w-16 h-5 bg-emerald-600/80 rotate-6"></div>
-                            <div className='flex flex-col rounded-2xl overflow-hidden bg-blue-500/40 border-4 border-white shadow-2xl shadow-emerald-400'>
-                                <div className='w-full flex justify-center items-center bg-emerald-900/70 border-b-4'>
-                                    <div className='flex gap-2 justify-center items-center'>
-                                        <Image src='/tools.svg' height={10} width={25} alt='others' />
-                                        <p className='decoration-wavy underline decoration-1 underline-offset-2 text-2xl font-bold'>Others</p>
-                                    </div>
-                                </div>
-                                <div className='p-2 text-lg w-full'>
-                                    <div className="flex flex-wrap gap-2">
-                                        {OtherSkills.map((s) => (
-                                            <TagSkill key={s.skill} skill={s.skill} url={s.url} />
-                                        ))}
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+        <div
+            className={`
+        absolute transform -translate-x-1/2 -translate-y-1/2 cursor-pointer
+        transition-all duration-700 ease-out group
+        ${isVisible ? "opacity-100 scale-100" : "opacity-0 scale-0"}
+        ${isActive ? "z-30" : "z-10"}
+      `}
+            style={{ left: `${node.x}%`, top: `${node.y}%` }}
+            onMouseEnter={() => onHover(node)}
+            onMouseLeave={onLeave}
+        >
+            {/* Node Glow */}
+            <div
+                className={`
+          absolute inset-0 rounded-full blur-lg transition-all duration-500
+          ${isActive ? "scale-150 opacity-60" : "scale-100 opacity-30"}
+        `}
+                style={{
+                    backgroundColor: category.color,
+                    width: "60px",
+                    height: "60px",
+                }}
+            />
+
+            {/* Node Core */}
+            <div
+                className={`
+          relative w-12 h-12 rounded-full border-2 border-white
+          flex items-center justify-center transition-all duration-500
+          ${isActive ? "scale-125" : "scale-100 group-hover:scale-110"}
+        `}
+                style={{
+                    backgroundColor: category.color,
+                    boxShadow: isActive ? `0 0 30px ${category.color}80` : `0 0 15px ${category.color}40`,
+                }}
+            >
+                <span className="text-lg">{node.icon}</span>
+            </div>
+
+            {/* Node Label */}
+            <div
+                className={`
+          absolute top-full left-1/2 transform -translate-x-1/2 mt-2
+          text-sm font-medium text-gray-200 whitespace-nowrap
+          transition-all duration-300
+          ${isActive ? "opacity-100 scale-110" : "opacity-70 group-hover:opacity-100"}
+        `}
+            >
+                {node.name}
+            </div>
+
+            {/* Pulse Ring */}
+            {isActive && (
+                <div
+                    className="absolute inset-0 rounded-full border-2 animate-ping"
+                    style={{
+                        borderColor: category.color,
+                        width: "60px",
+                        height: "60px",
+                    }}
+                />
+            )}
+        </div>
+    )
+}
+
+const ConnectionLine = ({ from, to, isActive }: any) => {
+    const [isDrawn, setIsDrawn] = useState(false)
+
+    useEffect(() => {
+        const timer = setTimeout(() => setIsDrawn(true), 2000)
+        return () => clearTimeout(timer)
+    }, [])
+
+    return (
+        <svg className="absolute inset-0 w-full h-full pointer-events-none z-0">
+            <line
+                x1={`${from.x}%`}
+                y1={`${from.y}%`}
+                x2={`${to.x}%`}
+                y2={`${to.y}%`}
+                stroke={isActive ? "#3B82F6" : "#E5E7EB"}
+                strokeWidth={isActive ? "3" : "1"}
+                strokeDasharray="5,5"
+                className={`transition-all duration-500 ${isDrawn ? "opacity-100" : "opacity-0"}`}
+                style={{
+                    filter: isActive ? "drop-shadow(0 0 8px #3B82F680)" : "none",
+                }}
+            />
+        </svg>
+    )
+}
+
+export default function Skills() {
+    const [activeNode, setActiveNode] = useState<any>(null)
+    const [activeConnections, setActiveConnections] = useState<string[]>([])
+    const [isLoaded, setIsLoaded] = useState(false)
+    const containerRef = useRef<HTMLDivElement>(null)
+
+    useEffect(() => {
+        setIsLoaded(true)
+    }, [])
+
+    const handleNodeHover = (node: any) => {
+        setActiveNode(node)
+        setActiveConnections(node.connections)
+    }
+
+    const handleNodeLeave = () => {
+        setActiveNode(null)
+        setActiveConnections([])
+    }
+
+    return (
+        <div className="min-h-screen  relative overflow-hidden quicksand">
+            {/* Animated Background */}
+            <div className="absolute inset-0">
+                {[...Array(50)].map((_, i) => (
+                    <div
+                        key={i}
+                        className="absolute w-1 h-1 bg-gray-200 rounded-full animate-pulse"
+                        style={{
+                            left: `${Math.random() * 100}%`,
+                            top: `${Math.random() * 100}%`,
+                            animationDelay: `${Math.random() * 5}s`,
+                            animationDuration: `${2 + Math.random() * 3}s`,
+                        }}
+                    />
+                ))}
+            </div>
+
+            {/* Header */}
+            <div
+                className={`
+          relative z-10 text-center pt-12 pb-8 transition-all duration-1000
+          ${isLoaded ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"}
+        `}
+            >
+                <div className="inline-flex items-center gap-3 mb-4">
+                    <Zap className="w-8 h-8 text-blue-500" />
+                    <h1 className="text-4xl md:text-5xl font-black text-gray-200">Skill Universe</h1>
+                    <Zap className="w-8 h-8 text-blue-500" />
+                </div>
+                <p className="text-lg text-gray-300 max-w-2xl mx-auto">
+                    Explore the interconnected web of my technical skills and expertise
+                </p>
+            </div>
+
+            {/* Main Universe Container */}
+            <div className="relative w-full h-full bg-radial from-10% from-gray-800/80 via-70% via-transparent to-transparent">
+                <div ref={containerRef} className="relative w-full h-[70vh] mx-auto max-w-6xl ">
+                    {/* Connection Lines */}
+                    {skillNodes.map((node) =>
+                        node.connections.map((connId) => {
+                            const connectedNode = skillNodes.find((n) => n.id === connId)
+                            if (!connectedNode) return null
+
+                            const isActive =
+                                (activeNode?.id === node.id && activeConnections.includes(connId)) ||
+                                (activeNode?.id === connId && node.connections.includes(activeNode.id))
+
+                            return <ConnectionLine key={`${node.id}-${connId}`} from={node} to={connectedNode} isActive={isActive} />
+                        }),
+                    )}
+
+                    {/* Skill Nodes */}
+                    {skillNodes.map((node) => (
+                        <SkillNode
+                            key={node.id}
+                            node={node}
+                            isActive={activeNode?.id === node.id || activeConnections.includes(node.id)}
+                            onHover={handleNodeHover}
+                            onLeave={handleNodeLeave}
+                        />
+                    ))}
                 </div>
             </div>
+
+            {/* Category Legend */}
+            {/* <div className="relative z-10 flex justify-center gap-4 mt-8 px-4">
+        {Object.keys(categories).map((category) => (
+          <CategoryLegend key={category} category={category} isActive={getActiveCategories().includes(category)} />
+        ))}
+      </div> */}
+
+            {/* Active Skill Info */}
+            {/* {activeNode && (
+        <div className="fixed bottom-8 left-1/2 transform -translate-x-1/2 z-30">
+          <div className="bg-white rounded-xl px-6 py-4 shadow-2xl border border-gray-200">
+            <div className="flex items-center gap-3">
+              <span className="text-2xl">{activeNode.icon}</span>
+              <div>
+                <h3 className="font-bold text-gray-800">{activeNode.name}</h3>
+                <p className="text-sm text-gray-600">Connected to {activeConnections.length} other skills</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      )} */}
+
+            {/* Instructions */}
+            {/* <div className="relative z-10 text-center mt-8 pb-12">
+        <div className="inline-flex items-center gap-2 px-6 py-3 bg-white/80 backdrop-blur-sm rounded-full border border-gray-200">
+          <Palette className="w-5 h-5 text-gray-500" />
+          <span className="text-gray-700 font-medium">Hover over nodes to explore connections</span>
+        </div>
+      </div> */}
         </div>
     )
 }

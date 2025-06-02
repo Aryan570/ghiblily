@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono, Pompiere } from "next/font/google";
+import { Geist, Geist_Mono, Pompiere, Quicksand } from "next/font/google";
 import "./globals.css";
 import SmoothScroll from "@/components/SmoothScroll";
 
@@ -19,6 +19,13 @@ const pompiere = Pompiere({
   weight: "400"
 })
 
+const quicksand = Quicksand({
+  variable: "--font-quicksand",
+  subsets: ["latin"],
+  weight: ["300", "400", "500", "600", "700"],
+  fallback: ["pompiere"],
+});
+
 export const metadata: Metadata = {
   title: "Ghiblily",
   description: "All about Aryan and Ghibli",
@@ -32,7 +39,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} ${pompiere.variable} antialiased`}
+        className={`${geistSans.variable} ${geistMono.variable} ${pompiere.variable} ${quicksand.variable} antialiased`}
       >
         <SmoothScroll>
           {children}

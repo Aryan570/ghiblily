@@ -6,7 +6,9 @@ import { gsap } from "gsap"
 import { DrawSVGPlugin } from "gsap/dist/DrawSVGPlugin"
 import styles from "@/components/plant-animation.module.css"
 import Link from "next/link"
-import { MoveRight, Download, BookOpen, Sparkles, ArrowDown } from "lucide-react"
+import { MoveRight, Download, BookOpen, ArrowDown } from "lucide-react"
+import Image from "next/image"
+import jiji from "@/../public/jiji_s.jpg"
 gsap.registerPlugin(DrawSVGPlugin)
 
 interface SceneProps {
@@ -331,17 +333,18 @@ const PlantAnimation: React.FC<SceneProps> = ({ className }) => {
   }, [])
 
   return (
-    <div className={`border-b-2 border-teal-800 relative ${styles.animation} ${className || ""}`}>
+    <div className={`border-b-2 quicksand border-teal-800 relative ${styles.animation} ${className || ""}`}>
       {/* Top Navigation Bar */}
       <div className="absolute top-0 left-0 right-0 z-20 p-4 md:p-6">
         <div className="flex justify-between items-center">
           {/* Logo/Brand */}
           <div className="flex items-center gap-3">
-            <div className="w-10 h-10 bg-gradient-to-br from-emerald-500 to-teal-600 rounded-xl flex items-center justify-center shadow-lg">
-              <Sparkles className="w-6 h-6 text-white" />
+            <div className="w-10 h-10 bg-gradient-to-br from-emerald-500 to-teal-600 rounded-xl flex items-center justify-center shadow-lg overflow-hidden">
+              {/* <Sparkles className="w-6 h-6 text-white" /> */}
+              <Image className="object-cover" src={jiji} height={200} width={200} alt="cat" />
             </div>
             <div className="hidden sm:block">
-              <h2 className="text-xl font-bold text-white drop-shadow-lg">Digital Garden</h2>
+              <h2 className="text-xl font-bold tracking-wide text-white drop-shadow-lg">Digital Garden</h2>
               <p className="text-sm text-emerald-100 drop-shadow">Growing Ideas</p>
             </div>
           </div>
@@ -354,14 +357,14 @@ const PlantAnimation: React.FC<SceneProps> = ({ className }) => {
               className="group px-4 py-2 md:px-6 md:py-3 bg-white/20 backdrop-blur-md border border-white/30 rounded-xl text-white font-semibold hover:bg-white/30 transition-all duration-300 shadow-lg hover:shadow-xl flex items-center gap-2"
             >
               <Download className="w-4 h-4 group-hover:animate-bounce" />
-              <span className="hidden sm:inline">Resume</span>
+              <span className="hidden sm:inline tracking-wider">Resume</span>
             </Link>
             <Link
               href={"/blogs"}
               className="group px-4 py-2 md:px-6 md:py-3 bg-gradient-to-r from-emerald-500 to-teal-600 text-white font-semibold rounded-xl hover:from-emerald-600 hover:to-teal-700 transition-all duration-300 shadow-lg hover:shadow-xl flex items-center gap-2"
             >
               <BookOpen className="w-4 h-4 group-hover:animate-pulse" />
-              <span className="hidden sm:inline">Blogs</span>
+              <span className="hidden sm:inline text-base tracking-wider">Blogs</span>
               <MoveRight className="w-4 h-4 group-hover:translate-x-1 transition-transform duration-300" />
             </Link>
           </div>
@@ -373,7 +376,7 @@ const PlantAnimation: React.FC<SceneProps> = ({ className }) => {
         <div className="bg-white/10 backdrop-blur-lg rounded-2xl p-6 border border-white/20 shadow-2xl">
           {/* Main Content */}
           <div className="mb-6">
-            <div className="inline-flex items-center gap-2 px-3 py-1 bg-emerald-500/20 rounded-full text-emerald-100 text-sm font-medium mb-4">
+            <div className="inline-flex items-center gap-2 px-3 py-1 bg-emerald-500/20 rounded-full text-emerald-100 text-base font-medium mb-4">
               <div className="w-2 h-2 bg-emerald-400 rounded-full animate-pulse"></div>
               Welcome
             </div>
@@ -382,7 +385,7 @@ const PlantAnimation: React.FC<SceneProps> = ({ className }) => {
               <br />
               <span className="text-emerald-300">Bloom & Grow</span>
             </h1>
-            <p className="text-emerald-100/90 leading-relaxed text-sm md:text-base drop-shadow">
+            <p className="text-emerald-100/90 leading-relaxed text-base md:text-lg drop-shadow">
               Where creativity meets code. Explore my digital garden of projects, thoughts, and innovations.
             </p>
           </div>
@@ -391,17 +394,17 @@ const PlantAnimation: React.FC<SceneProps> = ({ className }) => {
           <div className="grid grid-cols-2 gap-3 mb-6">
             <div className="bg-white/10 rounded-xl p-3 text-center">
               <div className="text-lg font-bold text-white">50+</div>
-              <div className="text-xs text-emerald-200">Projects</div>
+              <div className="text-sm text-emerald-200">Projects</div>
             </div>
             <div className="bg-white/10 rounded-xl p-3 text-center">
               <div className="text-lg font-bold text-white">3+</div>
-              <div className="text-xs text-emerald-200">Years</div>
+              <div className="text-sm text-emerald-200">Years</div>
             </div>
           </div>
 
           {/* Call to Action */}
           <div className="text-center">
-            <p className="text-xs text-emerald-200/80 mb-2">Scroll to explore more</p>
+            <p className="text-sm text-emerald-200/80 mb-2">Scroll to explore more</p>
             <ArrowDown className="w-5 h-5 text-emerald-300 mx-auto animate-bounce" />
           </div>
         </div>
@@ -413,8 +416,8 @@ const PlantAnimation: React.FC<SceneProps> = ({ className }) => {
           <div className="flex items-center gap-3">
             <div className="w-3 h-3 bg-green-400 rounded-full animate-pulse"></div>
             <div>
-              <p className="text-white font-medium text-sm">Plants Growing</p>
-              <p className="text-emerald-200 text-xs">Watch the magic happen</p>
+              <p className="text-white font-medium text-base">Plants Growing</p>
+              <p className="text-emerald-200 text-sm">Watch the magic happen</p>
             </div>
           </div>
         </div>
