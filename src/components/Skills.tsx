@@ -3,25 +3,26 @@
 
 import { useState, useEffect, useRef } from "react"
 import { Zap, Code, Terminal, Globe } from "lucide-react"
+import Image from "next/image"
 
 const skillNodes = [
     // Core Programming
-    { id: "rust", name: "Rust", x: 20, y: 30, category: "core", icon: "🦀", connections: ["cpp", "algorithms"] },
-    { id: "cpp", name: "C++", x: 35, y: 30, category: "core", icon: "⚡", connections: [ "nodejs"] },
-    { id: "algorithms", name: "Algorithms", x: 50, y: 20, category: "core", icon: "🧠", connections: ["sql", "cpp"] },
-    { id: "nodejs", name: "Node.js", x: 65, y: 35, category: "core", icon: "🟢", connections: ["sql", "react"] },
-    { id: "sql", name: "SQL", x: 80, y: 30, category: "core", icon: "🗄️", connections: ["mongodb"] },
+    { id: "rust", name: "Rust", x: 20, y: 30, category: "core", icon: "/rust.svg", connections: ["cpp", "algorithms"] },
+    { id: "cpp", name: "C++", x: 35, y: 30, category: "core", icon: "/c-plusplus.svg", connections: [ "nodejs"] },
+    { id: "algorithms", name: "Algorithms", x: 50, y: 20, category: "core", icon: "/leetcode.svg", connections: ["sql", "cpp"] },
+    { id: "nodejs", name: "Node.js", x: 65, y: 35, category: "core", icon: "/node.svg", connections: ["sql", "react"] },
+    { id: "sql", name: "SQL", x: 80, y: 30, category: "core", icon: "/sql.svg", connections: ["mongodb"] },
 
     // Web Development
-    { id: "react", name: "React", x: 15, y: 60, category: "web", icon: "⚛️", connections: ["nextjs", "typescript"] },
-    { id: "nextjs", name: "Next.js", x: 30, y: 55, category: "web", icon: "▲", connections: ["typescript", "tailwind"] },
+    { id: "react", name: "React", x: 15, y: 60, category: "web", icon: "/react.svg", connections: ["nextjs", "typescript"] },
+    { id: "nextjs", name: "Next.js", x: 30, y: 55, category: "web", icon: "/nextjs-icon.svg", connections: ["typescript", "tailwind"] },
     {
         id: "typescript",
         name: "TypeScript",
         x: 45,
         y: 65,
         category: "web",
-        icon: "📘",
+        icon: "/typescript-icon.svg",
         connections: ["javascript", "tailwind"],
     },
     {
@@ -30,18 +31,18 @@ const skillNodes = [
         x: 60,
         y: 75,
         category: "web",
-        icon: "💛",
+        icon: "/js.svg",
         connections: ["html", "tailwind"],
     },
-    { id: "html", name: "HTML/CSS", x: 75, y: 60, category: "web", icon: "🌐", connections: ["tailwind"] },
-    { id: "tailwind", name: "Tailwind", x: 85, y: 75, category: "web", icon: "🎨", connections: [] },
+    { id: "html", name: "HTML/CSS", x: 75, y: 60, category: "web", icon: "/html.svg", connections: ["tailwind"] },
+    { id: "tailwind", name: "Tailwind", x: 85, y: 75, category: "web", icon: "/tailwind.svg", connections: [] },
 
     // Tools & Database
-    { id: "mongodb", name: "MongoDB", x: 25, y: 90, category: "tools", icon: "🍃", connections: ["postgresql", "git"] },
-    { id: "postgresql", name: "PostgreSQL", x: 40, y: 95, category: "tools", icon: "🐘", connections: ["git"] },
-    { id: "git", name: "Git", x: 55, y: 85, category: "tools", icon: "🌿", connections: ["neovim"] },
-    { id: "neovim", name: "NeoVim", x: 70, y: 90, category: "tools", icon: "🌙", connections: ["davinci"] },
-    { id: "davinci", name: "DaVinci", x: 85, y: 85, category: "tools", icon: "🎬", connections: [] },
+    { id: "mongodb", name: "MongoDB", x: 25, y: 90, category: "tools", icon: "/mongo.svg", connections: ["postgresql", "git"] },
+    { id: "postgresql", name: "PostgreSQL", x: 40, y: 95, category: "tools", icon: "/postgresql.svg", connections: ["git"] },
+    { id: "git", name: "Git", x: 55, y: 85, category: "tools", icon: "/git_r.svg", connections: ["neovim"] },
+    { id: "neovim", name: "NeoVim", x: 70, y: 90, category: "tools", icon: "/Neovim-mark.svg", connections: ["davinci"] },
+    { id: "davinci", name: "DaVinci", x: 85, y: 90, category: "tools", icon: "/resolve.svg", connections: [] },
 ]
 
 const categories = {
@@ -96,7 +97,8 @@ const SkillNode = ({ node, isActive, onHover, onLeave }: any) => {
                     boxShadow: isActive ? `0 0 30px ${category.color}80` : `0 0 15px ${category.color}40`,
                 }}
             >
-                <span className="text-lg">{node.icon}</span>
+                {/* <span className="text-lg">{node.icon}</span> */}
+                <Image src={node.icon} height={40} width={40} alt="skill_image"/>
             </div>
 
             {/* Node Label */}
@@ -174,7 +176,7 @@ export default function Skills() {
     }
 
     return (
-        <div className="min-h-screen  relative overflow-hidden quicksand bg-gray-900 -my-[0.5px]">
+        <div className="min-h-screen  relative overflow-hidden quicksand bg-gray-900 -my-[1px]">
             {/* Animated Background */}
             <div className="absolute inset-0">
                 {[...Array(50)].map((_, i) => (
