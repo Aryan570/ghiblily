@@ -344,8 +344,8 @@ const PlantAnimation: React.FC<SceneProps> = ({ className }) => {
               <Image className="object-cover" src={jiji} height={200} width={200} alt="cat" />
             </div>
             <div className="hidden sm:block">
-              <h2 className="text-xl font-bold tracking-wide text-white drop-shadow-lg">Digital Garden</h2>
-              <p className="text-sm text-emerald-100 drop-shadow">Growing Ideas</p>
+              <h2 className="text-xl font-bold tracking-wide text-white drop-shadow-lg">This is Ghiblily</h2>
+              <p className="text-sm text-emerald-100 drop-shadow">Code & Wonder</p>
             </div>
           </div>
 

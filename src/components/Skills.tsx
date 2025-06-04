@@ -2,13 +2,13 @@
 "use client"
 
 import { useState, useEffect, useRef } from "react"
-import { Zap, Code, Terminal, Globe } from "lucide-react"
+import { Code, Terminal, Globe, Sparkles } from "lucide-react"
 import Image from "next/image"
 
 const skillNodes = [
     // Core Programming
     { id: "rust", name: "Rust", x: 20, y: 30, category: "core", icon: "/rust.svg", connections: ["cpp", "algorithms"] },
-    { id: "cpp", name: "C++", x: 35, y: 30, category: "core", icon: "/c-plusplus.svg", connections: [ "nodejs"] },
+    { id: "cpp", name: "C++", x: 35, y: 30, category: "core", icon: "/c-plusplus.svg", connections: [] },
     { id: "algorithms", name: "Algorithms", x: 50, y: 20, category: "core", icon: "/leetcode.svg", connections: ["sql", "cpp"] },
     { id: "nodejs", name: "Node.js", x: 65, y: 35, category: "core", icon: "/node.svg", connections: ["sql", "react"] },
     { id: "sql", name: "SQL", x: 80, y: 30, category: "core", icon: "/sql.svg", connections: ["mongodb"] },
@@ -201,9 +201,9 @@ export default function Skills() {
         `}
             >
                 <div className="inline-flex items-center gap-3 mb-4">
-                    <Zap className="w-8 h-8 text-blue-500" />
+                    <Sparkles className="w-8 h-8 text-blue-500" />
                     <h1 className="text-4xl md:text-5xl font-black text-gray-200">Skill Universe</h1>
-                    <Zap className="w-8 h-8 text-blue-500" />
+                    {/* <Zap className="w-8 h-8 text-blue-500" /> */}
                 </div>
                 <p className="text-lg text-gray-300 max-w-2xl mx-auto">
                     Explore the interconnected web of my technical skills and expertise

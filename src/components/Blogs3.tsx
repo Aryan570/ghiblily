@@ -28,11 +28,13 @@ export default async function BlogPort() {
             <div className="absolute inset-0 bg-gradient-to-b from-black/60 to-transparent z-10"></div>
             <div className="max-w-7xl mx-auto px-4 py-12 z-20 relative">
                 <div className="text-center mb-16">
-                    <h2 className="text-5xl font-bold mb-4">
-                        Latest <span className="decoration-wavy underline decoration-1 underline-offset-2 text-emerald-700">stories</span>
+                    <h2 className="text-5xl font-bold mb-4 flex justify-center items-center">
+                        {/* <Sparkle className="text-emerald-500 mr-2 h-8 w-8"/>  */}
+                        Latest <span className="decoration-wavy underline decoration-1 underline-offset-2 text-emerald-500 ml-2">stories</span>
                     </h2>
                     <p className="text-gray-200 text-xl max-w-2xl mx-auto">
-                        Sharing insights, experiences, and learnings from my development journey
+                        {/* Sharing insights, experiences, and learnings from my development journey */}
+                        Sharing things that I shouldn&apos;t be sharing, but I do anyway.
                     </p>
                 </div>
 
@@ -60,7 +62,7 @@ export default async function BlogPort() {
                                     </div>
                                     <div className="flex items-center gap-2 justify-center">
                                         <Clock className="w-4 h-4" />
-                                        <span>{featuredPost.read_time}</span>
+                                        <span>{featuredPost.read_time} minutes</span>
                                     </div>
                                 </div>
                                 <h3 className="text-3xl font-extrabold text-shadow-emerald-300 text-shadow-2xs mb-4 leading-tight uppercase">{featuredPost.title}</h3>
@@ -110,8 +112,8 @@ export default async function BlogPort() {
                                         <div className="p-4 flex-1">
                                             <div className="flex items-center gap-3 text-xs mb-2">
                                                 <span>{new Date(post.created_at).toLocaleDateString()}</span>
-                                                <span>•</span>
-                                                <span>{post.read_time}</span>
+                                                <Clock className="w-4 h-4" />
+                                                <span>{post.read_time} minutes</span>
                                             </div>
 
                                             <h4 className="font-semibold mb-2 group-hover:text-emerald-200 group-hover:text-shadow-emerald-600 transition-colors duration-200 leading-tight">
