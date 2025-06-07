@@ -9,13 +9,20 @@ const About = () => {
           <div className='max-w-lg basis-2/3'>
             <p className='mb-6 text-3xl font-bold'>about this <span className='decoration-wavy underline decoration-1 underline-offset-2'>site</span></p>
             <p className=" mb-6 text-xl">
-              So, I decided to do something related to Web Development in the summer of 2023, and what&apos;s better than creating your portfolio website? Well, I thought about it and wanted to make something that reflects me and the things I love. You might have an idea by now that I&apos;m a big Studio Ghibli fan. I decided to make a hybrid Studio Ghibli & Portfolio Website.
+              If you&apos;ve seen the original version of this website from 2023, you know how much it has improved, while still staying true to its inspiration. I loved Studio Ghibli back then, and my admiration for it has only grown.
             </p>
             <p className="mb-6 text-xl">
-              This website was made using NextJS, TailwindCSS, and many other react libraries. This may not be the best website in terms of design because I was not following any particular design nor I had any design idea in my mind at the time. This was meant to be something other than professional. The idea was to introduce you to this magical world of Ghibli and myself.
+              Studio Ghibli fills me with hope, motivating me to keep living, working hard, and cherishing the small things in life. I used to love evenings, but now I appreciate the silent afternoons more. It truly changed my perspective on life. A couple of years ago, I was listening to a Studio Ghibli piano playlist on YouTube when I came across an interesting conversation in the comment section:
+            </p>
+            <p className=" text-xl">
+              <span className='font-bold decoration-wavy underline decoration-1 underline-offset-2'>Comment</span>: &quot;I wish I could live in the world of Studio Ghibli.&quot;
+            </p>
+            <p className='text-xl mb-6'><span className='font-bold decoration-wavy underline decoration-1 underline-offset-2'>Reply</span>: &quot;You know, you are in that world right now; all this beautiful scenery is inspired by our real world.&quot;</p>
+            <p className="text-xl mb-6">
+              A question for you: Rainy days, cloudy days, sunny days... which do you like? ...cloudy days? Oh, then we&apos;re alike.
             </p>
             <p className="text-xl">
-              I could have effortlessly crafted a professional portfolio, but I strongly believe in showcasing my authentic self,  and at the moment of building this website, my entire inspiration stems from the enchanting world of Ghibli. I may redesign the website in the future. But for now, I fulfilled my purpose of making a Studio Ghibli-inspired portfolio. Give me your valuable suggestions and tell me your favorite Studio Ghibli Movie. via Contact.
+              If you find me interesting and would like to know more about me or consider hiring me, feel free to reach out through the contact section.
             </p>
           </div>
           <div className='mb-4 lg:mb-0'>

@@ -14,7 +14,7 @@ interface BlogPost {
 }
 
 export default async function BlogPort() {
-    const req = await fetch(`${process.env.NEXT_PUBLIC_URL || ""}/api/blog3`)
+    const req = await fetch(`${process.env.NEXT_PUBLIC_URL}/api/blog3`)
     if (!req.ok) {
         return <div className="text-center text-gray-500">No blog posts available</div>
     }
