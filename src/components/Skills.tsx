@@ -39,7 +39,7 @@ const skillNodes = [
 
     // Tools & Database
     { id: "mongodb", name: "MongoDB", x: 25, y: 90, category: "tools", icon: "/mongo.svg", connections: ["postgresql", "git"] },
-    { id: "postgresql", name: "PostgreSQL", x: 40, y: 95, category: "tools", icon: "/postgresql.svg", connections: ["git"] },
+    { id: "postgresql", name: "PostgreSQL", x: 40, y: 95, category: "tools", icon: "/postgresql.svg", connections: ["sql"] },
     { id: "git", name: "Git", x: 55, y: 85, category: "tools", icon: "/git_r.svg", connections: ["neovim"] },
     { id: "neovim", name: "NeoVim", x: 70, y: 90, category: "tools", icon: "/Neovim-mark.svg", connections: ["davinci"] },
     { id: "davinci", name: "DaVinci", x: 85, y: 90, category: "tools", icon: "/resolve.svg", connections: [] },
@@ -116,7 +116,7 @@ const SkillNode = ({ node, isActive, onHover, onLeave }: any) => {
             {/* Pulse Ring */}
             {isActive && (
                 <div
-                    className="absolute inset-0 rounded-full border-2 animate-ping"
+                    className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 rounded-full border-2 animate-ping"
                     style={{
                         borderColor: category.color,
                         width: "60px",
@@ -202,7 +202,7 @@ export default function Skills() {
             >
                 <div className="inline-flex items-center gap-3 mb-4">
                     <Sparkles className="w-8 h-8 text-blue-500" />
-                    <h1 className="text-4xl md:text-5xl font-black text-gray-200">Skill Universe</h1>
+                    <h1 className="text-4xl md:text-5xl font-black text-gray-200">Skill <span className="bg-gradient-to-br from-blue-600 to-blue-800 p-2 rounded-lg">Universe</span></h1>
                     {/* <Zap className="w-8 h-8 text-blue-500" /> */}
                 </div>
                 <p className="text-lg text-gray-300 max-w-2xl mx-auto">

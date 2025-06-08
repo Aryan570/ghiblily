@@ -30,7 +30,7 @@ export default async function BlogPort() {
                 <div className="text-center mb-16">
                     <h2 className="text-5xl font-bold mb-4 flex justify-center items-center">
                         {/* <Sparkle className="text-emerald-500 mr-2 h-8 w-8"/>  */}
-                        Latest <span className="decoration-wavy underline decoration-1 underline-offset-2 text-emerald-500 ml-2">stories</span>
+                        Latest <span className="decoration-wavy underline decoration-1 underline-offset-2 ml-2 bg-gradient-to-br from-emerald-600 to-teal-700 p-2 rounded-lg">stories</span>
                     </h2>
                     <p className="text-gray-200 text-xl max-w-2xl mx-auto">
                         {/* Sharing insights, experiences, and learnings from my development journey */}
