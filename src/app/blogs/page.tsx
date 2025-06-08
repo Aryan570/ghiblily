@@ -16,7 +16,9 @@ function get_url() {
 }
 const Blogs = async () => {
     const base_url = get_url();
-    const blogs_metadata = await fetch(`${base_url}/api/blog_metadata`)
+    const blogs_metadata = await fetch(`${base_url}/api/blog_metadata`, {
+        next : {revalidate : 7200}
+    })
     if (!blogs_metadata.ok) {
         return notFound();
     }
