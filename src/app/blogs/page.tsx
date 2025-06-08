@@ -2,6 +2,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import React from 'react'
+export const dynamic = 'force-dynamic'
 interface Blog {
     _id: string;
     title: string;
@@ -16,9 +17,7 @@ function get_url() {
 }
 const Blogs = async () => {
     const base_url = get_url();
-    const blogs_metadata = await fetch(`${base_url}/api/blog_metadata`, {
-        next : {revalidate : 7200}
-    })
+    const blogs_metadata = await fetch(`${base_url}/api/blog_metadata`)
     if (!blogs_metadata.ok) {
         return notFound();
     }
