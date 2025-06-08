@@ -10,8 +10,13 @@ interface Blog {
     link: string;
     description: string;
 }
+function get_url() {
+    if (process.env.VERCEL_URL) return `https://${process.env.VERCEL_URL}`;
+    return process.env.NEXT_PUBLIC_URL;
+}
 const Blogs = async () => {
-    const blogs_metadata = await fetch(`${process.env.NEXT_PUBLIC_URL}/api/blog_metadata`);
+    const base_url = get_url();
+    const blogs_metadata = await fetch(`${base_url}/api/blog_metadata`)
     if (!blogs_metadata.ok) {
         return notFound();
     }

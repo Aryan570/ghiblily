@@ -12,9 +12,14 @@ interface BlogPost {
     tags: string[]
     link: string
 }
+function get_url(){
+    if(process.env.VERCEL_URL) return `https://${process.env.VERCEL_URL}`;
+    return process.env.NEXT_PUBLIC_URL;
+}
 
 export default async function BlogPort() {
-    const req = await fetch(`https://${process.env.VERCEL_URL}/api/blog3`)
+    const base_url = get_url();
+    const req = await fetch(`${base_url}/api/blog3`)
     if (!req.ok) {
         return <div className="text-center text-gray-500">No blog posts available</div>
     }

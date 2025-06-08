@@ -21,10 +21,14 @@ const ALLOWED_STYLE_PROPERTIES = [
   'text-decoration'
 ];
 const ALLOWED_PROTOCOLS = ['http', 'https', null];
-
+function get_url() {
+    if (process.env.VERCEL_URL) return `https://${process.env.VERCEL_URL}`;
+    return process.env.NEXT_PUBLIC_URL;
+}
 const Blog = async ({ params }: { params: Promise<{ slug: string }> }) => {
   const { slug } = await params;
-  const res = await fetch(`${process.env.NEXT_PUBLIC_URL}/api/blog/${slug}`, {
+  const base_url = get_url();
+  const res = await fetch(`${base_url}/api/blog/${slug}`, {
     method: 'GET',
     headers: {
       'Content-Type': 'application/json',
