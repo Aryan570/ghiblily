@@ -2,8 +2,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import React from 'react'
-// export const dynamic = 'force-dynamic'
-export const revalidate = 7200
+export const dynamic = 'force-dynamic'
 interface Blog {
     _id: string;
     title: string;
