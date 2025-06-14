@@ -87,7 +87,7 @@ const Projects = () => {
             </div>
           </div>
         </div>
-        <Image className='w-full h-full object-cover' src={porco} width={400} height={400} alt='Image from Proco Rosso' />
+        <Image className='w-full h-full object-cover' src={porco} width={400} height={400} alt='Image from Proco Rosso' priority/>
         <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent"></div>
       </div>
       <div className='relative flex justify-center items-center horizontal-panel'>
@@ -128,7 +128,7 @@ const Projects = () => {
             </div>
           </div>
         </div>
-        <Image className='w-full h-full object-cover' src={marnie} width={400} height={400} alt='Soup_project_background_image' quality={100} />
+        <Image className='w-full h-full object-cover' src={marnie} width={400} height={400} alt='Soup_project_background_image' quality={100} priority/>
         <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent"></div>
       </div>
       <div className='relative flex justify-center items-center horizontal-panel grain-fade'>
@@ -170,7 +170,7 @@ const Projects = () => {
             </div>
           </div>
         </div>
-        <Image className='w-full h-full object-cover' src={poppy} width={400} height={400} alt='Himmel_background_image' quality={100} />
+        <Image className='w-full h-full object-cover' src={poppy} width={400} height={400} alt='Himmel_background_image' quality={100} priority />
         <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent"></div>
       </div>
     </div>
