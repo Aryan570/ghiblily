@@ -5,7 +5,7 @@ const AddBlog = () => {
         e.preventDefault();
         const formData = new FormData(e.currentTarget);
         const data = Object.fromEntries(formData.entries());
-        const res = await fetch(`${process.env.NEXT_PUBLIC_URL}/api/add_blog`, {
+        const res = await fetch('/api/add_blog', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
