@@ -102,7 +102,7 @@ export default async function BlogPort() {
                                 key={post.title}
 
                             >
-                                <div className="overflow-hidden hover:shadow-lg shadow-emerald-700/100 transition-all duration-300 group rounded-lg bg-[#0D2C2C] transform-gpu">
+                                <div className="overflow-hidden hover:shadow-lg shadow-emerald-700/100 transition-all duration-300 group rounded-lg bg-[#0D2C2C] transform-gpu mt-8">
                                     <div className="flex">
                                         <div className="w-full basis-1/4 aspect-video flex-shrink-0">
                                             <Image

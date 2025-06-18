@@ -3,6 +3,7 @@ import React from 'react'
 const AddBlog = () => {
     const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
+        const form = e.currentTarget;
         const formData = new FormData(e.currentTarget);
         const data = Object.fromEntries(formData.entries());
         const res = await fetch('/api/add_blog', {
@@ -16,6 +17,7 @@ const AddBlog = () => {
             console.error('Error adding blog:', res.statusText);
         } else {
             console.log('Blog added successfully!');
+            form.reset();
         }
     };
 
