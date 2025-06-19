@@ -1,4 +1,5 @@
 import Footer from '@/components/Footer';
+import { BookOpen, Calendar, Clock, Tag } from 'lucide-react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
@@ -10,6 +11,7 @@ import rehypeSanitize, { defaultSchema } from 'rehype-sanitize';
 import remarkEmoji from 'remark-emoji';
 import remarkGfm from 'remark-gfm';
 import remarkToc from 'remark-toc';
+import Genshin from '@/../public/jiji_s.jpg';
 
 const ALLOWED_STYLE_PROPERTIES = [
   'color',
@@ -22,6 +24,7 @@ const ALLOWED_STYLE_PROPERTIES = [
   'text-decoration'
 ];
 const ALLOWED_PROTOCOLS = ['http', 'https', null];
+const mockTags = ["Next.js", "React"]
 function get_url() {
   if (process.env.VERCEL_URL) return `https://${process.env.VERCEL_URL}`;
   return process.env.NEXT_PUBLIC_URL;
@@ -39,13 +42,45 @@ const Blog = async ({ params }: { params: Promise<{ slug: string }> }) => {
     return notFound();
   }
   const data = await res.json();
+  const wordsPerMinute = 200
+  const wordCount = data.content.split(" ").length
+  const readingTime = Math.ceil(wordCount / wordsPerMinute)
   return (
     <div className='flex min-h-screen w-full justify-center items-start hero quicksand'>
       <div className='hidden h-full md:flex sticky basis-1/2 overflow-hidden top-0 justify-end'>
-        <div className='m-6  overflow-hidden p-4 border-2 rounded-lg backdrop-blur-3xl'>
-          <div className='flex flex-col items-end'>
-            <h1 className='text-2xl font-bold'>{data.title}</h1>
-            <h2 className='float-right'>- {new Date(data.created_at).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}</h2>
+        <div className='m-6 overflow-hidden p-4 border-2 rounded-lg backdrop-blur-3xl'>
+          <Link href={'/'} className='w-full flex justify-center mb-4'>
+            <Image
+              className='rounded-full aspect-square object-cover border-3 border-emerald-100 hover:border-emerald-500'
+              src={Genshin}
+              height={30}
+              width={70}
+              alt='Author Image'
+            />
+          </Link>
+          <div className='flex flex-col items-end gap-2 mb-3'>
+            <h1 className='text-3xl font-bold'>{data.title}</h1>
+            <h2 className='flex items-center gap-2 opacity-70'><Calendar className='w-4 h-4' /> {new Date(data.created_at).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}</h2>
+            <div className="flex items-center gap-2 opacity-70">
+              <Clock className="w-4 h-4" />
+              {readingTime} min read
+            </div>
+            <div className="flex items-center gap-2 opacity-70">
+              <BookOpen className="w-4 h-4" />
+              {wordCount.toLocaleString()} words
+            </div>
+          </div>
+          <div className="mb-6">
+            <div className="flex flex-wrap gap-2">
+              {mockTags.map((tag) => (
+                <span
+                  key={tag}
+                  className="px-2 py-1 bg-emerald-100 text-emerald-700 rounded-full text-xs hover:bg-emerald-200 transition-colors flex gap-1"
+                >
+                  <Tag className="w-4 h-4" /> {tag}
+                </span>
+              ))}
+            </div>
           </div>
           <hr className='my-3'></hr>
           <div className='flex flex-col gap-2'>
@@ -69,7 +104,7 @@ const Blog = async ({ params }: { params: Promise<{ slug: string }> }) => {
         />
         <div className="w-full max-w-6xl h-full flex flex-col justify-center border-0 backdrop-blur-3xl p-8">
           <h1 className="text-4xl font-bold mb-8">{data.title}</h1>
-          <h2 className='opacity-60 text-lg'> - {new Date(data.created_at).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}</h2>
+          <h2 className='opacity-60 text-lg text-right'> - {new Date(data.created_at).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}</h2>
           <div className="markdown w-full">
             <ReactMarkdown
               remarkPlugins={[remarkGfm, remarkToc, remarkEmoji]}
