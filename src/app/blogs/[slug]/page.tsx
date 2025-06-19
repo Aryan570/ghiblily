@@ -1,3 +1,4 @@
+import Footer from '@/components/Footer';
 import Image from 'next/image';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
@@ -39,17 +40,34 @@ const Blog = async ({ params }: { params: Promise<{ slug: string }> }) => {
   }
   const data = await res.json();
   return (
-    <div className='flex min-h-screen w-full justify-center items-center hero'>
-      <div className='min-h-screen w-full flex flex-col justify-center items-center quicksand '>
+    <div className='flex min-h-screen w-full justify-center items-start hero quicksand'>
+      <div className='hidden h-full md:flex sticky basis-1/2 overflow-hidden top-0 justify-end'>
+        <div className='m-6  overflow-hidden p-4 border-2 rounded-lg backdrop-blur-3xl'>
+          <div className='flex flex-col items-end'>
+            <h1 className='text-2xl font-bold'>{data.title}</h1>
+            <h2 className='float-right'>- {new Date(data.created_at).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}</h2>
+          </div>
+          <hr className='my-3'></hr>
+          <div className='flex flex-col gap-2'>
+            <div>
+              Wanna see more <Link href={'/blogs'} className='hover:underline hover:decoration-wavy hover:underline-offset-4 text-emerald-600 font-bold'>blogs</Link>?
+            </div>
+            <div>
+              Check out my <Link href={'/'} className='hover:underline hover:decoration-wavy hover:underline-offset-4 text-emerald-600 font-bold'>portfolio.</Link>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div className='min-h-screen w-full flex flex-col justify-center items-center md:items-end  '>
         <Image
-          className='w-full max-w-4xl h-[40vh] object-cover -mb-16 brightness-90'
+          className='w-full max-w-6xl h-[40vh] object-cover -mb-16 brightness-90'
           src={data.banner_url}
           height={200}
           width={200}
           alt={data.title}
           quality={100}
         />
-        <div className="w-full max-w-4xl h-full flex flex-col justify-center border-0 backdrop-blur-3xl p-8">
+        <div className="w-full max-w-6xl h-full flex flex-col justify-center border-0 backdrop-blur-3xl p-8">
           <h1 className="text-4xl font-bold mb-8">{data.title}</h1>
           <h2 className='opacity-60 text-lg'> - {new Date(data.created_at).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}</h2>
           <div className="markdown w-full">
@@ -114,7 +132,7 @@ const Blog = async ({ params }: { params: Promise<{ slug: string }> }) => {
                         height={height}
                         className="mx-auto lg:w-full"
                         loading="lazy"
-                        // quality={100}
+                      // quality={100}
                       />
                     );
                   } catch (error) {
@@ -135,6 +153,8 @@ const Blog = async ({ params }: { params: Promise<{ slug: string }> }) => {
               {data.content}
             </ReactMarkdown>
           </div>
+          <hr className='mb-12'></hr>
+          <Footer />
         </div>
       </div>
     </div>
