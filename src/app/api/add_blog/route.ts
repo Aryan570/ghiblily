@@ -6,13 +6,14 @@ interface BlogPost {
     content: string;
     banner_url: string;
     description: string;
+    tags : string;
     secret : string;
 }
 
 export async function POST(request: Request) {
     try {
         const body: BlogPost = await request.json();
-        const { title, content, banner_url, description, secret } = body;
+        const { title, content, banner_url, description, tags, secret } = body;
         if (secret !== process.env.THE_SECRET) {
             console.error('Invalid secret provided');
             return NextResponse.json(
@@ -20,7 +21,7 @@ export async function POST(request: Request) {
                 { status: 403 }
             );
         }
-        if (!title || !content || !banner_url || !description) {
+        if (!title || !content || !banner_url || !description || !tags) {
             return NextResponse.json(
                 { error: 'Missing required fields' },
                 { status: 400 }
@@ -37,10 +38,12 @@ export async function POST(request: Request) {
                 { status: 409 }
             );
         }
+        const tag_array = tags.split(',').map(tag => tag.trim());
         await db.collection('blogs').insertOne({
             title,
             content,
             banner_url,
+            tags: tag_array,
             created_at: date
         });
 
@@ -48,6 +51,7 @@ export async function POST(request: Request) {
             title,
             banner_url,
             description,
+            tags: tag_array,
             created_at: date,
             link: `/blogs/${encodeURIComponent(title)}`
         });

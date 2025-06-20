@@ -24,7 +24,6 @@ const ALLOWED_STYLE_PROPERTIES = [
   'text-decoration'
 ];
 const ALLOWED_PROTOCOLS = ['http', 'https', null];
-const mockTags = ["Next.js", "React"]
 function get_url() {
   if (process.env.VERCEL_URL) return `https://${process.env.VERCEL_URL}`;
   return process.env.NEXT_PUBLIC_URL;
@@ -48,7 +47,7 @@ const Blog = async ({ params }: { params: Promise<{ slug: string }> }) => {
   return (
     <div className='flex min-h-screen w-full justify-center items-start hero quicksand'>
       <div className='hidden h-full md:flex sticky basis-1/2 overflow-hidden top-0 justify-end'>
-        <div className='m-6 overflow-hidden p-4 border-2 rounded-lg backdrop-blur-3xl'>
+        <div className='m-6 overflow-hidden p-4 border-b-1 border-r-1 shadow-gray-300 shadow rounded-lg backdrop-blur-3xl'>
           <Link href={'/'} className='w-full flex justify-center mb-4'>
             <Image
               className='rounded-full aspect-square object-cover border-3 border-emerald-100 hover:border-emerald-500'
@@ -72,7 +71,7 @@ const Blog = async ({ params }: { params: Promise<{ slug: string }> }) => {
           </div>
           <div className="mb-6">
             <div className="flex flex-wrap gap-2">
-              {mockTags.map((tag) => (
+              {data.tags.map((tag : string) => (
                 <span
                   key={tag}
                   className="px-2 py-1 bg-emerald-100 text-emerald-700 rounded-full text-xs hover:bg-emerald-200 transition-colors flex gap-1"
