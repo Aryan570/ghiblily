@@ -380,7 +380,7 @@ const PlantAnimation: React.FC<SceneProps> = ({ className }) => {
               <div className="w-2 h-2 bg-emerald-400 rounded-full animate-pulse"></div>
               Welcome
             </div>
-            <h1 className="text-2xl md:text-3xl lg:text-4xl font-black text-white mb-4 leading-tight drop-shadow-lg">
+            <h1 className="text-2xl md:text-3xl lg:text-4xl font-black text-white mb-4 leading-tight drop-shadow-lg font-right">
               Watch Ideas
               <br />
               <span className="text-emerald-300">Bloom & Grow</span>

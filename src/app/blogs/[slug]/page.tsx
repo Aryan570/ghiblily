@@ -58,7 +58,7 @@ const Blog = async ({ params }: { params: Promise<{ slug: string }> }) => {
             />
           </Link>
           <div className='flex flex-col items-end gap-2 mb-3'>
-            <h1 className='text-3xl font-bold'>{data.title}</h1>
+            <h1 className='text-3xl font-extrabold font-right'>{data.title}</h1>
             <h2 className='flex items-center gap-2 opacity-70'><Calendar className='w-4 h-4' /> {new Date(data.created_at).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}</h2>
             <div className="flex items-center gap-2 opacity-70">
               <Clock className="w-4 h-4" />
@@ -102,7 +102,7 @@ const Blog = async ({ params }: { params: Promise<{ slug: string }> }) => {
           quality={100}
         />
         <div className="w-full max-w-6xl h-full flex flex-col justify-center border-0 backdrop-blur-3xl p-8">
-          <h1 className="text-4xl font-bold mb-8">{data.title}</h1>
+          <h1 className="text-4xl font-bold mb-8 font-right">{data.title}</h1>
           <h2 className='opacity-60 text-lg text-right'> - {new Date(data.created_at).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}</h2>
           <div className="markdown w-full">
             <ReactMarkdown

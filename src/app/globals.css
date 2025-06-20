@@ -121,6 +121,10 @@ html.lenis {
   font-family: var(--font-quicksand);
 }
 
+.font-right {
+  font-family: var(--font-right);
+}
+
 .scrollbar-hide::-webkit-scrollbar {
   display: none;
 }
