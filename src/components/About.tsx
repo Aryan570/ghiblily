@@ -4,7 +4,7 @@ import kiki from '@/../public/maybe_this_one.webp'
 const About = () => {
   return (
     <>
-      <section id='about_site' className='w-full flex justify-center items-center overflow-x-hidden z-20 bg-gray-900'>
+      <section id='about_site' className='w-full flex justify-center items-center overflow-x-hidden z-20 bg-gray-900 text-gray-200'>
         <div className='container max-w-6xl my-10 mx-auto flex flex-col-reverse lg:flex-row items-center justify-around p-4'>
           <div className='max-w-lg basis-2/3'>
             <p className='mb-6 text-3xl font-bold'>about this <span className='decoration-wavy underline decoration-1 underline-offset-2'>site</span></p>
