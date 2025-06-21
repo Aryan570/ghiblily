@@ -29,14 +29,14 @@ export default async function BlogPort() {
     }
     const [featuredPost, ...otherPosts] = blogPosts
     return (
-        <div className="bg-gray-900 text-white relative">
+        <div className="bg-gray-900 text-white relative quicksand">
             <div className="absolute inset-0 bg-gradient-to-b from-black/60 to-transparent z-10"></div>
             <div className="max-w-7xl mx-auto px-4 py-12 z-20 relative">
                 <div className="text-center mb-16">
                     <h2 className="text-5xl font-bold mb-4 flex justify-center items-center font-right">
-                        Latest <span className="decoration-wavy underline decoration-1 underline-offset-2 ml-2 bg-gradient-to-br from-emerald-600 to-teal-700 p-2 rounded-lg">stories</span>
+                        Latest <span className=" ml-2 bg-gradient-to-br from-emerald-600 to-teal-700 p-2 rounded-lg">stories</span>
                     </h2>
-                    <p className="text-gray-200 text-xl max-w-2xl mx-auto">
+                    <p className="text-gray-300 text-xl max-w-2xl mx-auto">
                         Sharing things that I shouldn&apos;t be sharing, but I do anyway.
                     </p>
                 </div>
@@ -68,7 +68,7 @@ export default async function BlogPort() {
                                         <span>{featuredPost.read_time} minutes</span>
                                     </div>
                                 </div>
-                                <h3 className="text-3xl font-extrabold text-shadow-emerald-300 text-shadow-2xs mb-4 leading-tight uppercase">{featuredPost.title}</h3>
+                                <h3 className="text-3xl font-extrabold text-shadow-emerald-300 text-shadow-2xs mb-4 leading-tight uppercase font-right">{featuredPost.title}</h3>
                                 <p className="text-gray-200 text-lg leading-relaxed mb-6">{featuredPost.description}</p>
                                 <div className="flex flex-wrap gap-2 mb-6">
                                     {featuredPost.tags.map((tag) => (
@@ -90,7 +90,7 @@ export default async function BlogPort() {
                     </div>
                     <div className="space-y-8">
                         <div className="mb-8">
-                            <h3 className="text-2xl font-bold mb-2">More Stories</h3>
+                            <h3 className="text-2xl font-bold mb-2 font-right">More Stories</h3>
                             <div className="w-12 h-1 bg-[#2E856E] rounded"></div>
                         </div>
 
@@ -119,7 +119,7 @@ export default async function BlogPort() {
                                                 <span>{post.read_time} minutes</span>
                                             </div>
 
-                                            <h4 className="font-semibold mb-2 group-hover:text-emerald-200 group-hover:text-shadow-emerald-600 transition-colors duration-200 leading-tight">
+                                            <h4 className="font-semibold mb-2 group-hover:text-emerald-200 group-hover:text-shadow-emerald-600 transition-colors duration-200 leading-tight font-right">
                                                 {post.title}
                                             </h4>
 
