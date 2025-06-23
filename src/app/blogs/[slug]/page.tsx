@@ -47,7 +47,7 @@ const Blog = async ({ params }: { params: Promise<{ slug: string }> }) => {
   return (
     <div className='flex min-h-screen w-full justify-center items-start hero quicksand'>
       <div className='hidden h-full md:flex sticky basis-1/2 overflow-hidden top-0 justify-end'>
-        <div className='m-6 overflow-hidden p-4 border-b-1 border-r-1 dark:shadow-gray-300 shadow-gray-500 shadow rounded-lg backdrop-blur-3xl'>
+        <div className='m-6 overflow-hidden p-4 border-b-1 border-r-1 dark:shadow-gray-300 shadow-gray-500 shadow rounded-lg backdrop-blur-3xl float-right'>
           <Link href={'/'} className='w-full flex justify-center mb-4'>
             <Image
               className='rounded-full aspect-square object-cover border-3 border-emerald-100 hover:border-emerald-500'

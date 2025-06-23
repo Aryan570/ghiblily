@@ -345,7 +345,7 @@ const PlantAnimation: React.FC<SceneProps> = ({ className }) => {
             </div>
             <div className="hidden sm:block">
               <h2 className="text-xl font-bold tracking-wide text-white drop-shadow-lg">This is Ghiblily</h2>
-              <p className="text-sm text-emerald-100 drop-shadow">Code & Wonder</p>
+              <p className="text-sm text-emerald-100 drop-shadow">This is me.</p>
             </div>
           </div>
 
@@ -393,7 +393,7 @@ const PlantAnimation: React.FC<SceneProps> = ({ className }) => {
           {/* Stats or Features */}
           <div className="grid grid-cols-2 gap-3 mb-6">
             <div className="bg-white/10 rounded-xl p-3 text-center">
-              <div className="text-lg font-bold text-white">50+</div>
+              <div className="text-lg font-bold text-white">30+</div>
               <div className="text-sm text-emerald-200">Projects</div>
             </div>
             <div className="bg-white/10 rounded-xl p-3 text-center">
