@@ -180,7 +180,7 @@ const Blog = async ({ params }: { params: Promise<{ slug: string }> }) => {
                     console.warn('Missing or invalid link href');
                     return null;
                   }
-                  return <Link href={href} target="_blank" rel="noopener noreferrer" {...props} />;
+                  return <Link href={href} className='text-emerald-600' target="_blank" rel="noopener noreferrer" {...props} />;
                 },
               }}
             >

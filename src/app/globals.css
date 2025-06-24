@@ -90,7 +90,7 @@ html.lenis {
 }
 
 .markdown {
-  @apply prose lg:prose-lg min-w-full w-full prose-amber prose-p:text-lg xl:prose-p:text-xl prose-ul:leading-5 prose-img:rounded-2xl dark:prose-invert;
+  @apply prose lg:prose-lg min-w-full w-full prose-emerald prose-a:no-underline prose-a:hover:decoration-wavy prose-a:hover:underline prose-a:hover:underline-offset-4 prose-p:text-lg xl:prose-p:text-xl prose-ul:leading-5 prose-img:rounded-2xl dark:prose-invert;
 }
 
 .markdown h1 {
