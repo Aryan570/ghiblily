@@ -186,17 +186,34 @@ export default function Skills() {
             </div>
             <div
                 className={`
-          relative z-10 text-center pt-12 pb-8 transition-all duration-1000
+          relative z-10 text-center pt-20 transition-all duration-1000
           ${isLoaded ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"}
         `}
             >
-                <div className="inline-flex items-center gap-3 mb-4">
-                    <Sparkles className="w-8 h-8 text-blue-500" />
-                    <h1 className="text-4xl md:text-5xl font-black text-gray-200 font-right">Skills</h1>
+                <div className="relative max-w-md mx-auto">
+                    <div className="absolute -top-4 -left-4 w-8 h-8 border-l-2 border-t-2 border-gray-600"></div>
+                    <div className="absolute -top-4 -right-4 w-8 h-8 border-r-2 border-t-2 border-gray-600"></div>
+                    <div className="absolute -bottom-4 -left-4 w-8 h-8 border-l-2 border-b-2 border-gray-600"></div>
+                    <div className="absolute -bottom-4 -right-4 w-8 h-8 border-r-2 border-b-2 border-gray-600"></div>
+                    <div className="py-8 px-12">
+                        <div className="flex items-center justify-center gap-6 mb-2">
+                            <div className="w-12 h-px bg-gradient-to-r from-transparent to-gray-500"></div>
+                            <Sparkles className="w-5 h-5 text-gray-500" />
+                            <div className="w-12 h-px bg-gradient-to-l from-transparent to-gray-500"></div>
+                        </div>
+
+                        <h1 className="text-6xl md:text-7xl font-bold text-white playfair-display italic tracking-tight leading-none font-right">
+                            Skills
+                        </h1>
+
+                        <div className="flex items-center justify-center gap-6 mt-2">
+                            <div className="w-8 h-px bg-gradient-to-r from-transparent to-gray-600"></div>
+                            <div className="w-2 h-2 bg-gray-600 rounded-full"></div>
+                            <div className="w-8 h-px bg-gradient-to-l from-transparent to-gray-600"></div>
+                        </div>
+                    </div>
                 </div>
-                <p className="text-lg text-gray-300 max-w-2xl mx-auto">
-                    Things I have learnt over the years.
-                </p>
+                <p className="text-gray-400 mt-5 text-lg font-light tracking-wide">Things I have learnt over the years.</p>
             </div>
             <div className="relative w-full h-full ">
                 <div ref={containerRef} className="relative w-full h-[70vh] mx-auto max-w-6xl ">
