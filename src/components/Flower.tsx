@@ -370,27 +370,22 @@ const PlantAnimation: React.FC<SceneProps> = ({ className }) => {
           </div>
         </div>
       </div>
-
-      {/* Side Content Panel */}
       <div className="absolute left-4 md:left-8 top-1/2 transform -translate-y-1/2 z-20 max-w-xs lg:max-w-sm">
         <div className="bg-white/10 backdrop-blur-lg rounded-2xl p-6 border border-white/20 shadow-2xl">
-          {/* Main Content */}
           <div className="mb-6">
             <div className="inline-flex items-center gap-2 px-3 py-1 bg-emerald-500/20 rounded-full text-emerald-100 text-base font-medium mb-4">
               <div className="w-2 h-2 bg-emerald-400 rounded-full animate-pulse"></div>
               Welcome
             </div>
             <h1 className="text-2xl md:text-3xl lg:text-4xl font-black text-white mb-4 leading-tight drop-shadow-lg font-right">
-              Watch Ideas
+              Engineer with a heart 
               <br />
-              <span className="text-emerald-300">Bloom & Grow</span>
+              <span className="text-emerald-300">full of dreams</span>
             </h1>
             <p className="text-emerald-100/90 leading-relaxed text-base md:text-lg drop-shadow">
-              Where creativity meets code. Explore my digital garden of projects, thoughts, and innovations.
+              I hope you&apos;ll find something here that sparks your imagination or makes you smile.
             </p>
           </div>
-
-          {/* Stats or Features */}
           <div className="grid grid-cols-2 gap-3 mb-6">
             <div className="bg-white/10 rounded-xl p-3 text-center">
               <div className="text-lg font-bold text-white">30+</div>
@@ -401,16 +396,12 @@ const PlantAnimation: React.FC<SceneProps> = ({ className }) => {
               <div className="text-sm text-emerald-200">Years</div>
             </div>
           </div>
-
-          {/* Call to Action */}
           <div className="text-center">
             <p className="text-sm text-emerald-200/80 mb-2">Scroll to explore more</p>
             <ArrowDown className="w-5 h-5 text-emerald-300 mx-auto animate-bounce" />
           </div>
         </div>
       </div>
-
-      {/* Bottom Floating Info */}
       <div className="absolute bottom-6 right-6 z-20 hidden lg:block">
         <div className="bg-white/10 backdrop-blur-lg rounded-2xl p-4 border border-white/20 shadow-xl max-w-xs">
           <div className="flex items-center gap-3">

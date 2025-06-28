@@ -11,7 +11,7 @@ import rehypeSanitize, { defaultSchema } from 'rehype-sanitize';
 import remarkEmoji from 'remark-emoji';
 import remarkGfm from 'remark-gfm';
 import remarkToc from 'remark-toc';
-import Genshin from '@/../public/jiji_s.jpg';
+import Genshin from '@/../public/log.png';
 
 const ALLOWED_STYLE_PROPERTIES = [
   'color',
@@ -50,7 +50,7 @@ const Blog = async ({ params }: { params: Promise<{ slug: string }> }) => {
         <div className='m-6 overflow-hidden p-4 border-b-1 border-r-1 dark:shadow-gray-300 shadow-gray-500 shadow rounded-lg backdrop-blur-3xl float-right'>
           <Link href={'/'} className='w-full flex justify-center mb-4'>
             <Image
-              className='rounded-full aspect-square object-cover border-3 border-emerald-100 hover:border-emerald-500'
+              className='hover:rounded-full aspect-square object-cover border-3 hover:border-blue-500'
               src={Genshin}
               height={30}
               width={70}
@@ -74,7 +74,7 @@ const Blog = async ({ params }: { params: Promise<{ slug: string }> }) => {
               {data.tags.map((tag : string) => (
                 <span
                   key={tag}
-                  className="px-2 py-1 bg-emerald-100 text-emerald-700 rounded-full text-xs hover:bg-emerald-200 transition-colors flex gap-1"
+                  className="px-2 py-1 bg-blue-100 text-blue-700 rounded-full text-xs hover:bg-blue-200 transition-colors flex gap-1"
                 >
                   <Tag className="w-4 h-4" /> {tag}
                 </span>
@@ -84,10 +84,10 @@ const Blog = async ({ params }: { params: Promise<{ slug: string }> }) => {
           <hr className='my-3'></hr>
           <div className='flex flex-col gap-2'>
             <div>
-              Wanna see more <Link href={'/blogs'} className='hover:underline hover:decoration-wavy hover:underline-offset-4 text-emerald-600 font-bold'>blogs</Link>?
+              Wanna see more <Link href={'/blogs'} className='hover:underline hover:decoration-wavy hover:underline-offset-4 text-blue-600 font-bold'>blogs</Link>?
             </div>
             <div>
-              Check out my <Link href={'/'} className='hover:underline hover:decoration-wavy hover:underline-offset-4 text-emerald-600 font-bold'>portfolio.</Link>
+              Check out my <Link href={'/'} className='hover:underline hover:decoration-wavy hover:underline-offset-4 text-blue-600 font-bold'>portfolio.</Link>
             </div>
           </div>
         </div>

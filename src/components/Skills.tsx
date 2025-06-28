@@ -192,10 +192,10 @@ export default function Skills() {
             >
                 <div className="inline-flex items-center gap-3 mb-4">
                     <Sparkles className="w-8 h-8 text-blue-500" />
-                    <h1 className="text-4xl md:text-5xl font-black text-gray-200 font-right">Skill <span className="bg-gradient-to-br from-blue-600 to-blue-800 p-2 rounded-lg">Universe</span></h1>
+                    <h1 className="text-4xl md:text-5xl font-black text-gray-200 font-right">Skills</h1>
                 </div>
                 <p className="text-lg text-gray-300 max-w-2xl mx-auto">
-                    Explore the interconnected web of my technical skills and expertise
+                    Things I have learnt over the years.
                 </p>
             </div>
             <div className="relative w-full h-full ">
