@@ -1,5 +1,4 @@
 "use client"
-
 import type React from "react"
 import { useState, useRef, useEffect, useLayoutEffect } from "react"
 import { gsap } from "gsap"
@@ -334,10 +333,8 @@ const PlantAnimation: React.FC<SceneProps> = ({ className }) => {
 
   return (
     <div className={`border-b-2 quicksand border-teal-800 relative ${styles.animation} ${className || ""}`}>
-      {/* Top Navigation Bar */}
       <div className="absolute top-0 left-0 right-0 z-20 p-4 md:p-6">
         <div className="flex justify-between items-center">
-          {/* Logo/Brand */}
           <div className="flex items-center gap-3">
             <div className="w-10 h-10 bg-gradient-to-br from-emerald-500 to-teal-600 rounded-xl flex items-center justify-center shadow-lg overflow-hidden">
               {/* <Sparkles className="w-6 h-6 text-white" /> */}
@@ -348,12 +345,10 @@ const PlantAnimation: React.FC<SceneProps> = ({ className }) => {
               <p className="text-sm text-emerald-100 drop-shadow">This is me.</p>
             </div>
           </div>
-
-          {/* Action Buttons */}
           <div className="flex items-center gap-3">
             <Link
               target="_blank"
-              href={"https://drive.google.com/file/d/138DVEnUUftR1MxWezEnK0YDFnm95dz0-/view?usp=sharing"}
+              href={"https://drive.google.com/file/d/1ApQjrBA3ncQyvdGfKHYYxWxeIGH1k0Ah/view?usp=sharing"}
               className="group px-4 py-2 md:px-6 md:py-3 bg-white/20 backdrop-blur-md border border-white/30 rounded-xl text-white font-semibold hover:bg-white/30 transition-all duration-300 shadow-lg hover:shadow-xl flex items-center gap-2"
             >
               <Download className="w-4 h-4 group-hover:animate-bounce" />
