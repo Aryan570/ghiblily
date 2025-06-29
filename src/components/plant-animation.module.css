@@ -1,0 +1,63 @@
+.animation {
+  height: 100vh;
+  /* background: #9ab3f5; */
+  background: #9ab3f5;
+  overflow: hidden;
+  /* position: relative; */
+}
+
+.scene {
+  height: 100%;
+  width: 100%;
+}
+
+.btn {
+  position: fixed;
+  top: 15px;
+  right: 30px;
+  padding: 0;
+  background: transparent;
+  border: none;
+  color: #2d3436;
+  /* font-family: "Sacramento", cursive; */
+  font-size: 2rem;
+  cursor: pointer;
+}
+
+.btn:active,
+.btn:focus {
+  text-decoration: underline;
+  border: none;
+  outline: none;
+}
+
+.stem {
+  stroke-linecap: round;
+}
+
+.leaf-stem {
+  stroke-linecap: round;
+}
+
+.petalStems path {
+  stroke-linecap: round;
+}
+
+/* Add some subtle animations for the floating elements */
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+.animation .absolute:nth-child(3) {
+  animation: float 6s ease-in-out infinite;
+}
+
+.animation .absolute:nth-child(4) {
+  animation: float 8s ease-in-out infinite reverse;
+}
