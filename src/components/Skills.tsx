@@ -202,7 +202,7 @@ export default function Skills() {
                             <div className="w-12 h-px bg-gradient-to-l from-transparent to-gray-500"></div>
                         </div>
 
-                        <h1 className="text-6xl md:text-7xl font-bold text-white playfair-display italic tracking-tight leading-none font-right">
+                        <h1 className="text-6xl md:text-7xl font-bold text-white italic tracking-tight leading-none font-right">
                             Skills
                         </h1>
 
@@ -216,7 +216,7 @@ export default function Skills() {
                 <p className="text-gray-400 mt-5 text-lg font-light tracking-wide">Things I have learnt over the years.</p>
             </div>
             <div className="relative w-full h-full ">
-                <div ref={containerRef} className="relative w-full h-[70vh] mx-auto max-w-6xl ">
+                <div ref={containerRef} className="relative w-full h-[70vh] mx-auto max-w-6xl mb-16">
                     {skillNodes.map((node) =>
                         node.connections.map((connId) => {
                             const connectedNode = skillNodes.find((n) => n.id === connId)
