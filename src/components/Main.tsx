@@ -5,9 +5,9 @@ import { Pause, Play } from 'lucide-react';
 import Banner from './Banner';
 
 const sound = new Howl({
-    src: ['Ghibli_real.mp3'],
+    src: ['rosso.mp3'],
     loop: true,
-    volume: 0.3,
+    volume: 0.7,
     html5: true,
 });
 
