@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Pompiere, Quicksand, Playfair_Display } from "next/font/google";
 import "./globals.css";
 import SmoothScroll from "@/components/SmoothScroll";
+import { Analytics } from "@vercel/analytics/next";
 
 const pompiere = Pompiere({
   variable: "--font-pompiere",
@@ -41,6 +42,7 @@ export default function RootLayout({
         <SmoothScroll>
           {children}
         </SmoothScroll>
+        <Analytics />
       </body>
     </html>
   );
