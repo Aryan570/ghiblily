@@ -348,7 +348,7 @@ const PlantAnimation: React.FC<SceneProps> = ({ className }) => {
           <div className="flex items-center gap-3">
             <Link
               target="_blank"
-              href={"https://drive.google.com/file/d/1NqKV6vp9Cr2h374g52ENN0bsxsnkx-oc/view?usp=sharing"}
+              href={"https://drive.google.com/file/d/1C5pHTb2A3CJChuyAT4vLfwGtMCsENrEO/view?usp=sharing"}
               className="group px-4 py-2 md:px-6 md:py-3 bg-white/20 backdrop-blur-md border border-white/30 rounded-xl text-white font-semibold hover:bg-white/30 transition-all duration-300 shadow-lg hover:shadow-xl flex items-center gap-2"
             >
               <Download className="w-4 h-4 group-hover:animate-bounce" />
