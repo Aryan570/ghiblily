@@ -44,7 +44,7 @@ const Intro = () => {
       <div className="relative z-10 w-full max-w-6xl mx-auto p-6 flex flex-col md:flex-row items-center justify-center gap-8 md:gap-16">
         <div
           ref={boxRef}
-          className="w-full md:w-[65%] h-64 md:h-[70%] bg-gradient-to-br from-emerald-600 to-teal-800 rounded-2xl shadow-xl flex items-center justify-center p-4 text-white text-3xl font-bold flex-shrink-0 transform-gpu "
+          className="w-full md:w-[65%] h-64 md:h-[70%] shadow-xl flex items-center justify-center p-4 text-white text-3xl font-bold flex-shrink-0 transform-gpu "
         >
           <Image src={castle} width={300} height={300} alt='castle-from-howl' />
         </div>
