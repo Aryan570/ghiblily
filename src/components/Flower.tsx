@@ -336,7 +336,7 @@ const PlantAnimation: React.FC<SceneProps> = ({ className }) => {
       <div className="absolute top-0 left-0 right-0 z-20 p-4 md:p-6">
         <div className="flex justify-between items-center">
           <div className="flex items-center gap-3">
-            <div className="w-10 h-10 bg-gradient-to-br from-emerald-500 to-teal-600 rounded-xl flex items-center justify-center shadow-lg overflow-hidden">
+            <div className="w-10 h-10 md:ml-3 bg-gradient-to-br from-emerald-500 to-teal-600 rounded-xl flex items-center justify-center shadow-lg overflow-hidden">
               {/* <Sparkles className="w-6 h-6 text-white" /> */}
               <Image className="object-cover" src={jiji} height={200} width={200} alt="cat" />
             </div>
@@ -397,7 +397,7 @@ const PlantAnimation: React.FC<SceneProps> = ({ className }) => {
           </div>
         </div>
       </div>
-      <div className="absolute bottom-6 right-6 z-20 hidden lg:block">
+      {/* <div className="absolute bottom-6 right-6 z-20 hidden lg:block">
         <div className="bg-white/10 backdrop-blur-lg rounded-2xl p-4 border border-white/20 shadow-xl max-w-xs">
           <div className="flex items-center gap-3">
             <div className="w-3 h-3 bg-green-400 rounded-full animate-pulse"></div>
@@ -407,7 +407,7 @@ const PlantAnimation: React.FC<SceneProps> = ({ className }) => {
             </div>
           </div>
         </div>
-      </div>
+      </div> */}
 
       <svg
         className={styles.scene}
