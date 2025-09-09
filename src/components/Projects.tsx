@@ -3,7 +3,7 @@ import Image from 'next/image'
 import React, { useLayoutEffect } from 'react'
 import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/dist/ScrollTrigger'
-import { Github, Star } from 'lucide-react'
+import { Github } from 'lucide-react'
 import himmel from '@/../public/Himmel_Dis.png'
 import porco from '@/../public/porco026.jpg'
 import soup from '@/../public/Soup_display.jpeg'
@@ -53,7 +53,7 @@ const Projects = () => {
         <div className="absolute inset-0 flex items-center justify-center p-6">
           <div className="max-w-6xl w-full flex flex-col md:flex-row items-center justify-center gap-8 md:gap-44">
             <div className="relative md:scale-150 z-10">
-              <Star className="absolute -top-4 -left-4 w-8 h-8 text-yellow-300 fill-yellow-300 animate-pulse" />
+              {/*<Star className="absolute -top-4 -left-4 w-8 h-8 text-yellow-300 fill-yellow-300 animate-pulse" />*/}
               {/* <Heart className="absolute -bottom-3 -right-3 w-7 h-7 text-pink-400 fill-pink-400 animate-bounce" /> */}
               <div className="relative transform -rotate-2 hover:rotate-0 transition-all duration-300 z-10 ">
                 <Image
@@ -94,7 +94,7 @@ const Projects = () => {
         <div className="absolute inset-0 flex items-center justify-center p-6">
           <div className="max-w-6xl w-full flex flex-col md:flex-row items-center justify-center gap-8 md:gap-44">
             <div className="relative md:scale-150 z-10">
-              <Star className="absolute -top-4 -left-4 w-8 h-8 text-yellow-300 fill-yellow-300 animate-pulse" />
+              {/* <Star className="absolute -top-4 -left-4 w-8 h-8 text-yellow-300 fill-yellow-300 animate-pulse" /> */}
               {/* <Heart className="absolute -bottom-3 -right-3 w-7 h-7 text-pink-400 fill-pink-400 animate-bounce" /> */}
               <div className="relative transform -rotate-2 hover:rotate-0 transition-all duration-300 z-10 ">
                 <Image
@@ -113,7 +113,7 @@ const Projects = () => {
               </h1>
               <div className=" leading-relaxed mt-4 text-lg">
                 <ul className='list-disc pl-4'>
-                  <li>Real-time Smart Energy Monitoring System for tracking various electrical appliance parameters such as voltage, power, etc. The full report is available here.</li>
+                  <li>Real-time Smart Energy Monitoring System for tracking various electrical appliance parameters such as voltage, power, etc. The full report is available github.</li>
                   <li>The dashboard includes a safety feature that sends email notifications to the user in the event of abnormal parameters or if their budget is exceeded.</li>
                   <li>Data is collected using an Arduino UNO, transmitted to MongoDB, and presented to the user in real time.</li>
                 </ul>
@@ -136,7 +136,7 @@ const Projects = () => {
           <div className="max-w-6xl w-full flex flex-col md:flex-row items-center justify-center gap-8 md:gap-44">
             <div className="relative md:scale-150 z-10">
               {/* Decorative elements */}
-              <Star className="absolute -top-4 -left-4 w-8 h-8 text-yellow-300 fill-yellow-300 animate-pulse" />
+              {/* <Star className="absolute -top-4 -left-4 w-8 h-8 text-yellow-300 fill-yellow-300 animate-pulse" /> */}
               {/* <Heart className="absolute -bottom-3 -right-3 w-7 h-7 text-pink-400 fill-pink-400 animate-bounce" /> */}
               <div className="relative transform -rotate-2 hover:rotate-0 transition-all duration-300 z-10 ">
                 <Image
