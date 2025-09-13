@@ -2,6 +2,7 @@
 import Image from 'next/image'
 import { useEffect, useState } from 'react'
 import picture from '@/../public/rises2trimmed.webp'
+import { rises_p } from '@/lib/place'
 const Contact = () => {
     const [err, set_err] = useState<string>("");
     const [isSubmitting, setIsSubmitting] = useState(false);
@@ -47,7 +48,7 @@ const Contact = () => {
     return (
         <div className='container flex flex-col lg:flex-row items-center justify-center mx-auto my-10 p-4 z-20'>
             <div className='container max-w-6xl flex flex-col lg:flex-row justify-center items-center overflow-hidden'>
-                <Image className='rounded-lg shadow-lg mx-auto' src={picture} width={400} height={400} alt='rises' unoptimized priority />
+                <Image className='rounded-lg shadow-lg mx-auto' src={picture} width={400} height={400} alt='rises' placeholder='blur' blurDataURL={rises_p} unoptimized />
                 <div className='max-w-md mx-auto p-8 rounded-lg mt-4 lg:mt-0'>
                     <h3 className='font-semibold text-2xl mb-4'>Get in <span className='decoration-wavy underline decoration-1 underline-offset-2'>touch</span></h3>
                     <p className="mb-6 text-lg">

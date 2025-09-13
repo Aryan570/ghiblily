@@ -1,6 +1,7 @@
 import Image from 'next/image'
 import React from 'react'
 import kiki from '@/../public/maybe_this_one.webp'
+import { kiki_p } from '@/lib/place'
 const About = () => {
   return (
     <>
@@ -26,7 +27,7 @@ const About = () => {
             </p>
           </div>
           <div className='mb-4 lg:mb-0'>
-            <Image className='rounded-lg w-full' src={kiki} width={400} height={400} alt='Picture_of_water' unoptimized />
+            <Image className='rounded-lg w-full' src={kiki} width={400} height={400} alt='Picture_of_water' placeholder='blur' blurDataURL={kiki_p} unoptimized />
           </div>
         </div>
       </section>
